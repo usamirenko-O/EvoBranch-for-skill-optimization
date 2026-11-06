@@ -1,0 +1,13 @@
+# Environment-configured LiveMath solver aliases.
+model_list:
+  - model_name: livemath-solver
+    litellm_params:
+      model: os.environ/VERTEX_MODEL_ID
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: os.environ/VERTEX_LOCATION
+
+  - model_name: livemath-solver-qwen3-4b
+    litellm_params:
+      model: os.environ/QWEN3_4B_MODEL_ID
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: os.environ/QWEN3_4B_LOCATION

@@ -1,0 +1,58 @@
+{
+  "files": [
+    {
+      "path": "livemathematicianbench/data/202511/qa_202511_final.json",
+      "url": "https://huggingface.co/datasets/LiveMathematicianBench/LiveMathematicianBench/resolve/b72450f6ce96c26158d64d945a5d31ef7727be41/data/202511/qa_202511_final.json",
+      "sha256": "a16443ef669233ac2015bb8b54f9149d136818b636e954930a09ceb200dc8ea8",
+      "bytes": 168340
+    },
+    {
+      "path": "livemathematicianbench/data/202512/qa_202512_final.json",
+      "url": "https://huggingface.co/datasets/LiveMathematicianBench/LiveMathematicianBench/resolve/b72450f6ce96c26158d64d945a5d31ef7727be41/data/202512/qa_202512_final.json",
+      "sha256": "301174eb9ad13300ae8d9e1388a1df5193e1b7061d425049ee23fffb22ea276d",
+      "bytes": 344259
+    },
+    {
+      "path": "livemathematicianbench/data/202601/qa_202601_final.json",
+      "url": "https://huggingface.co/datasets/LiveMathematicianBench/LiveMathematicianBench/resolve/b72450f6ce96c26158d64d945a5d31ef7727be41/data/202601/qa_202601_final.json",
+      "sha256": "8695186c1ab15c0e2a18f6e3b75731d60006617d76718dfce50f5604143551cc",
+      "bytes": 290051
+    },
+    {
+      "path": "livemathematicianbench/data/202602/qa_202602_final.json",
+      "url": "https://huggingface.co/datasets/LiveMathematicianBench/LiveMathematicianBench/resolve/b72450f6ce96c26158d64d945a5d31ef7727be41/data/202602/qa_202602_final.json",
+      "sha256": "5081a04f7a2b0234aa7df7faa05da8b0020222d5fcb64bc136d34e5d9a0b713a",
+      "bytes": 322112
+    },
+    {
+      "path": "livecodebench/test5.jsonl",
+      "url": "https://huggingface.co/datasets/livecodebench/code_generation_lite/resolve/main/test5.jsonl",
+      "sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214",
+      "bytes": 557699297
+    },
+    {
+      "path": "livecodebench/test6.jsonl",
+      "url": "https://huggingface.co/datasets/livecodebench/code_generation_lite/resolve/main/test6.jsonl",
+      "sha256": "bb4c364f71921c4495a6ad15abe1a927350b720009f4933e2e71f8af0f6fd1f5",
+      "bytes": 134303240
+    },
+    {
+      "path": "pubmedqa/ori_pqal.json",
+      "url": "https://raw.githubusercontent.com/pubmedqa/pubmedqa/master/data/ori_pqal.json",
+      "sha256": "8b3276be8942ebbd77f3ddcda12c1749bf0e490045a736fd8438ee40cf37a41d",
+      "bytes": 2584787
+    },
+    {
+      "path": "chemllmbench/yield_prediction/BH_sample_100_test.npz",
+      "url": "https://raw.githubusercontent.com/ChemFoundationModels/ChemLLMBench/main/data/yield_prediction/BH_sample_100_test.npz",
+      "sha256": "d9bfeb8f6bb6806849de5f50e583df6288ff74b24881f83d134de78dfdb59c5a",
+      "bytes": 23434
+    },
+    {
+      "path": "chemllmbench/yield_prediction/SU_sample_100_test.npz",
+      "url": "https://raw.githubusercontent.com/ChemFoundationModels/ChemLLMBench/main/data/yield_prediction/SU_sample_100_test.npz",
+      "sha256": "ca925aef97877a9a13d20d6b7e227ae533162bc9897707f7fd011bd5e1083592",
+      "bytes": 21217
+    }
+  ]
+}

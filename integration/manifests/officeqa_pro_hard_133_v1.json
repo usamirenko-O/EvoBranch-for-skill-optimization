@@ -1,0 +1,1533 @@
+{
+  "benchmark": "officeqa",
+  "content_hash": "580536f71dc54430bda91963afd34002fe3cd76d156026e8395fee81c9b84049",
+  "counts": {
+    "deployment": 93,
+    "train": 27,
+    "val": 13
+  },
+  "manifest_id": "officeqa_pro_hard_133_v1",
+  "notes": [
+    "OfficeQA has no native train/val/test split; the partition is SkillOpt's frozen officeqa_id_split, reused verbatim for the rows that exist locally.",
+    "113 of SkillOpt's 246 manifest rows (all category=='easy') are excluded because officeqa_full.csv is gated and not present in this workspace. Verified offline: the 133 surviving rows are exactly the 133 uids in officeqa_pro.csv, so no row was chosen by this builder.",
+    "Default manifest only. The run-time split is whatever manifest the launcher was given; this one is the checked-in default/example over the full locally-available population.",
+    "Scoring tolerance is score_answer's own default (0.0) and is recorded in every result as a secondary metric; OfficeQAAdapter(tolerance=...) changes it without touching the scorer."
+  ],
+  "role_map": {
+    "deployment": "SkillOpt officeqa_id_split/test, restricted to locally-present uids",
+    "native_splits": "none -- OfficeQA publishes a single HF split named 'train'",
+    "train": "SkillOpt officeqa_id_split/train, restricted to locally-present uids",
+    "val": "SkillOpt officeqa_id_split/val, restricted to locally-present uids"
+  },
+  "sampling": {
+    "excluded_counts": {
+      "deployment": 79,
+      "train": 23,
+      "val": 11
+    },
+    "excluded_task_ids": {
+      "deployment": [
+        "UID0006",
+        "UID0008",
+        "UID0011",
+        "UID0016",
+        "UID0020",
+        "UID0021",
+        "UID0023",
+        "UID0024",
+        "UID0038",
+        "UID0040",
+        "UID0043",
+        "UID0045",
+        "UID0047",
+        "UID0048",
+        "UID0051",
+        "UID0054",
+        "UID0060",
+        "UID0061",
+        "UID0064",
+        "UID0066",
+        "UID0067",
+        "UID0074",
+        "UID0075",
+        "UID0076",
+        "UID0078",
+        "UID0080",
+        "UID0081",
+        "UID0082",
+        "UID0088",
+        "UID0089",
+        "UID0090",
+        "UID0095",
+        "UID0099",
+        "UID0104",
+        "UID0105",
+        "UID0106",
+        "UID0107",
+        "UID0116",
+        "UID0119",
+        "UID0125",
+        "UID0126",
+        "UID0127",
+        "UID0128",
+        "UID0129",
+        "UID0131",
+        "UID0132",
+        "UID0137",
+        "UID0138",
+        "UID0139",
+        "UID0143",
+        "UID0146",
+        "UID0152",
+        "UID0153",
+        "UID0156",
+        "UID0157",
+        "UID0158",
+        "UID0160",
+        "UID0164",
+        "UID0167",
+        "UID0171",
+        "UID0176",
+        "UID0178",
+        "UID0181",
+        "UID0185",
+        "UID0186",
+        "UID0191",
+        "UID0192",
+        "UID0197",
+        "UID0198",
+        "UID0199",
+        "UID0200",
+        "UID0206",
+        "UID0208",
+        "UID0209",
+        "UID0210",
+        "UID0231",
+        "UID0232",
+        "UID0236",
+        "UID0242"
+      ],
+      "train": [
+        "UID0002",
+        "UID0014",
+        "UID0026",
+        "UID0033",
+        "UID0034",
+        "UID0046",
+        "UID0063",
+        "UID0079",
+        "UID0087",
+        "UID0092",
+        "UID0098",
+        "UID0115",
+        "UID0141",
+        "UID0144",
+        "UID0145",
+        "UID0151",
+        "UID0162",
+        "UID0163",
+        "UID0166",
+        "UID0189",
+        "UID0202",
+        "UID0229",
+        "UID0241"
+      ],
+      "val": [
+        "UID0041",
+        "UID0052",
+        "UID0070",
+        "UID0072",
+        "UID0091",
+        "UID0142",
+        "UID0159",
+        "UID0217",
+        "UID0234",
+        "UID0235",
+        "UID0239"
+      ]
+    },
+    "filter": "uid present in officeqa_pro.csv (== SkillOpt manifest category=='hard')",
+    "method": "frozen_upstream_manifest_filtered_by_local_availability",
+    "seed": null
+  },
+  "source": {
+    "frozen_partition": "SkillOpt/data/officeqa_id_split",
+    "inputs": [
+      {
+        "path": "SkillOpt/data/officeqa_id_split/split_manifest.json",
+        "present": true,
+        "sha256": "8f76983eadeb6670df2fc88f568fa86c6318d4e8f02912bf05c5c69955a867e7"
+      },
+      {
+        "path": "SkillOpt/data/officeqa_id_split/train/items.json",
+        "present": true,
+        "sha256": "1bb3a9ca003f6ba7aff34cf2d1fe23d9af12ff647060ac8b7d4c22dcb9e84b56"
+      },
+      {
+        "path": "SkillOpt/data/officeqa_id_split/val/items.json",
+        "present": true,
+        "sha256": "1d7fc4443718a8fc565faf4450d31109880dbf8103759a306289f5ba9407f11b"
+      },
+      {
+        "path": "SkillOpt/data/officeqa_id_split/test/items.json",
+        "present": true,
+        "sha256": "563c30589e897f08161df4d2778578e14a8a2887391813e8d45c3d39eafd900d"
+      },
+      {
+        "path": "benchmarks/officeqa/officeqa_pro.csv",
+        "present": true,
+        "sha256": "367ed0435864628c5aa8bc2379ae63804e33cb13db1a18b34afa4333b835738c"
+      }
+    ],
+    "materialized_from": "benchmarks/officeqa/officeqa_pro.csv",
+    "official_scorer": {
+      "ref": "officeqa_reference_reward:score_answer",
+      "sha256": "cd8f57c83d31439e4ae96015df2bb6c3d7936cc9d33339978b97e141296a3ee9",
+      "upstream": "https://github.com/databricks/officeqa (reward.py)",
+      "vendored_copy": "EvoSkill/src/evaluation/reward.py"
+    },
+    "upstream_dataset": "databricks/officeqa",
+    "upstream_file_used_by_skillopt": "officeqa_full.csv",
+    "upstream_revision": "8ecbf18d3833daf4750a903d14963e4c4c1d4cd8",
+    "upstream_url": "https://huggingface.co/datasets/databricks/officeqa"
+  },
+  "splits": {
+    "deployment": [
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1954_02.txt"
+        },
+        "native_id": "UID0003",
+        "native_split": "train",
+        "task_id": "UID0003"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1941_01.txt\r\ntreasury_bulletin_1954_02.txt"
+        },
+        "native_id": "UID0004",
+        "native_split": "train",
+        "task_id": "UID0004"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1941_01.txt\r\ntreasury_bulletin_1954_02.txt"
+        },
+        "native_id": "UID0005",
+        "native_split": "train",
+        "task_id": "UID0005"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2011_09.txt"
+        },
+        "native_id": "UID0009",
+        "native_split": "train",
+        "task_id": "UID0009"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2025_06.txt"
+        },
+        "native_id": "UID0010",
+        "native_split": "train",
+        "task_id": "UID0010"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1958_10.txt"
+        },
+        "native_id": "UID0012",
+        "native_split": "train",
+        "task_id": "UID0012"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1942_07.txt"
+        },
+        "native_id": "UID0013",
+        "native_split": "train",
+        "task_id": "UID0013"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1981_11.txt"
+        },
+        "native_id": "UID0015",
+        "native_split": "train",
+        "task_id": "UID0015"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1999_03.txt\r\ntreasury_bulletin_1994_03.txt"
+        },
+        "native_id": "UID0022",
+        "native_split": "train",
+        "task_id": "UID0022"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1942_10.txt\r\ntreasury_bulletin_1947_08.txt"
+        },
+        "native_id": "UID0025",
+        "native_split": "train",
+        "task_id": "UID0025"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1970_06.txt"
+        },
+        "native_id": "UID0029",
+        "native_split": "train",
+        "task_id": "UID0029"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1941_03.txt"
+        },
+        "native_id": "UID0032",
+        "native_split": "train",
+        "task_id": "UID0032"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1980_05.txt"
+        },
+        "native_id": "UID0035",
+        "native_split": "train",
+        "task_id": "UID0035"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2011_09.txt"
+        },
+        "native_id": "UID0036",
+        "native_split": "train",
+        "task_id": "UID0036"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2007_09.txt"
+        },
+        "native_id": "UID0037",
+        "native_split": "train",
+        "task_id": "UID0037"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2020_12.txt"
+        },
+        "native_id": "UID0042",
+        "native_split": "train",
+        "task_id": "UID0042"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1941_05.txt"
+        },
+        "native_id": "UID0050",
+        "native_split": "train",
+        "task_id": "UID0050"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2000_09.txt"
+        },
+        "native_id": "UID0053",
+        "native_split": "train",
+        "task_id": "UID0053"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1960_07.txt"
+        },
+        "native_id": "UID0055",
+        "native_split": "train",
+        "task_id": "UID0055"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1969_10.txt"
+        },
+        "native_id": "UID0057",
+        "native_split": "train",
+        "task_id": "UID0057"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2003_09.txt"
+        },
+        "native_id": "UID0058",
+        "native_split": "train",
+        "task_id": "UID0058"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1953_02.txt"
+        },
+        "native_id": "UID0059",
+        "native_split": "train",
+        "task_id": "UID0059"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1948_04.txt\r\ntreasury_bulletin_1952_12.txt"
+        },
+        "native_id": "UID0062",
+        "native_split": "train",
+        "task_id": "UID0062"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2016_12.txt\r\ntreasury_bulletin_2017_06.txt"
+        },
+        "native_id": "UID0068",
+        "native_split": "train",
+        "task_id": "UID0068"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2000_06.txt"
+        },
+        "native_id": "UID0069",
+        "native_split": "train",
+        "task_id": "UID0069"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2007_12.txt"
+        },
+        "native_id": "UID0071",
+        "native_split": "train",
+        "task_id": "UID0071"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2011_03.txt\r\ntreasury_bulletin_2012_03.txt"
+        },
+        "native_id": "UID0077",
+        "native_split": "train",
+        "task_id": "UID0077"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1969_01.txt"
+        },
+        "native_id": "UID0084",
+        "native_split": "train",
+        "task_id": "UID0084"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1988_12.txt"
+        },
+        "native_id": "UID0093",
+        "native_split": "train",
+        "task_id": "UID0093"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1939_12.txt\r\ntreasury_bulletin_1941_01.txt"
+        },
+        "native_id": "UID0094",
+        "native_split": "train",
+        "task_id": "UID0094"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1940_12.txt\r\ntreasury_bulletin_1941_12.txt"
+        },
+        "native_id": "UID0096",
+        "native_split": "train",
+        "task_id": "UID0096"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1989_12.txt"
+        },
+        "native_id": "UID0097",
+        "native_split": "train",
+        "task_id": "UID0097"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2011_12.txt\r\ntreasury_bulletin_2014_12.txt"
+        },
+        "native_id": "UID0100",
+        "native_split": "train",
+        "task_id": "UID0100"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2021_03.txt\r\ntreasury_bulletin_2021_06.txt\r\ntreasury_bulletin_2021_09.txt\r\ntreasury_bulletin_2021_12.txt"
+        },
+        "native_id": "UID0102",
+        "native_split": "train",
+        "task_id": "UID0102"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1960_12.txt\r\ntreasury_bulletin_1967_12.txt"
+        },
+        "native_id": "UID0103",
+        "native_split": "train",
+        "task_id": "UID0103"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2018_12.txt"
+        },
+        "native_id": "UID0108",
+        "native_split": "train",
+        "task_id": "UID0108"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2015_09.txt\r\ntreasury_bulletin_2020_09.txt\r\ntreasury_bulletin_2024_09.txt\r\ntreasury_bulletin_2025_09.txt"
+        },
+        "native_id": "UID0111",
+        "native_split": "train",
+        "task_id": "UID0111"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1996_09.txt\r\ntreasury_bulletin_2001_09.txt\r\ntreasury_bulletin_2006_09.txt\r\ntreasury_bulletin_2011_09.txt"
+        },
+        "native_id": "UID0112",
+        "native_split": "train",
+        "task_id": "UID0112"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1982_11.txt"
+        },
+        "native_id": "UID0113",
+        "native_split": "train",
+        "task_id": "UID0113"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2003_03.txt"
+        },
+        "native_id": "UID0114",
+        "native_split": "train",
+        "task_id": "UID0114"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1972_03.txt\r\ntreasury_bulletin_1973_03.txt\r\ntreasury_bulletin_1974_03.txt\r\ntreasury_bulletin_1975_03.txt\r\ntreasury_bulletin_1976_03.txt"
+        },
+        "native_id": "UID0117",
+        "native_split": "train",
+        "task_id": "UID0117"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1968_07.txt"
+        },
+        "native_id": "UID0118",
+        "native_split": "train",
+        "task_id": "UID0118"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1970_05.txt\r\ntreasury_bulletin_1970_06.txt\r\ntreasury_bulletin_1970_07.txt"
+        },
+        "native_id": "UID0120",
+        "native_split": "train",
+        "task_id": "UID0120"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1980_03.txt"
+        },
+        "native_id": "UID0121",
+        "native_split": "train",
+        "task_id": "UID0121"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2000_06.txt\r\ntreasury_bulletin_2005_06.txt"
+        },
+        "native_id": "UID0124",
+        "native_split": "train",
+        "task_id": "UID0124"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1980_04.txt\r\ntreasury_bulletin_1981_04.txt"
+        },
+        "native_id": "UID0130",
+        "native_split": "train",
+        "task_id": "UID0130"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1963_02.txt\r\ntreasury_bulletin_1964_02.txt\r\ntreasury_bulletin_1965_02.txt"
+        },
+        "native_id": "UID0134",
+        "native_split": "train",
+        "task_id": "UID0134"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1996_06.txt\r\ntreasury_bulletin_1997_06.txt\r\ntreasury_bulletin_1998_06.txt\r\ntreasury_bulletin_2000_06.txt"
+        },
+        "native_id": "UID0135",
+        "native_split": "train",
+        "task_id": "UID0135"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1953_10.txt\r\ntreasury_bulletin_1954_10.txt\r\ntreasury_bulletin_1955_10.txt"
+        },
+        "native_id": "UID0136",
+        "native_split": "train",
+        "task_id": "UID0136"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1994_06.txt\r\ntreasury_bulletin_1999_06.txt\r\ntreasury_bulletin_2004_06.txt\r\ntreasury_bulletin_2009_06.txt\r\ntreasury_bulletin_2014_06.txt"
+        },
+        "native_id": "UID0140",
+        "native_split": "train",
+        "task_id": "UID0140"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1948_03.txt\r\ntreasury_bulletin_1949_03.txt\r\ntreasury_bulletin_1950_03.txt\r\ntreasury_bulletin_1951_03.txt"
+        },
+        "native_id": "UID0147",
+        "native_split": "train",
+        "task_id": "UID0147"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1972_05.txt\r\ntreasury_bulletin_1973_05.txt\r\ntreasury_bulletin_1974_05.txt"
+        },
+        "native_id": "UID0148",
+        "native_split": "train",
+        "task_id": "UID0148"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1962_03.txt\r\ntreasury_bulletin_1963_03.txt"
+        },
+        "native_id": "UID0149",
+        "native_split": "train",
+        "task_id": "UID0149"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2010_09.txt\r\ntreasury_bulletin_2011_09.txt\r\ntreasury_bulletin_2012_09.txt\r\ntreasury_bulletin_2013_09.txt"
+        },
+        "native_id": "UID0155",
+        "native_split": "train",
+        "task_id": "UID0155"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1939_08.txt\r\ntreasury_bulletin_1939_09.txt\r\ntreasury_bulletin_1939_10.txt\r\ntreasury_bulletin_1939_11.txt"
+        },
+        "native_id": "UID0168",
+        "native_split": "train",
+        "task_id": "UID0168"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2000_12.txt\r\ntreasury_bulletin_2001_12.txt\r\ntreasury_bulletin_2002_12.txt"
+        },
+        "native_id": "UID0172",
+        "native_split": "train",
+        "task_id": "UID0172"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1980_08.txt"
+        },
+        "native_id": "UID0173",
+        "native_split": "train",
+        "task_id": "UID0173"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1960_04.txt\r\ntreasury_bulletin_1960_06.txt"
+        },
+        "native_id": "UID0174",
+        "native_split": "train",
+        "task_id": "UID0174"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1947_02.txt"
+        },
+        "native_id": "UID0175",
+        "native_split": "train",
+        "task_id": "UID0175"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1950_04.txt\r\ntreasury_bulletin_1951_04.txt\r\ntreasury_bulletin_1952_04.txt"
+        },
+        "native_id": "UID0177",
+        "native_split": "train",
+        "task_id": "UID0177"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1977_03.txt\r\ntreasury_bulletin_1977_04.txt\r\ntreasury_bulletin_1977_05.txt"
+        },
+        "native_id": "UID0179",
+        "native_split": "train",
+        "task_id": "UID0179"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2010_09.txt"
+        },
+        "native_id": "UID0180",
+        "native_split": "train",
+        "task_id": "UID0180"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2011_03.txt\r\ntreasury_bulletin_2012_03.txt\r\ntreasury_bulletin_2013_03.txt"
+        },
+        "native_id": "UID0182",
+        "native_split": "train",
+        "task_id": "UID0182"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1964_03.txt\r\ntreasury_bulletin_1965_03.txt\r\ntreasury_bulletin_1966_03.txt"
+        },
+        "native_id": "UID0183",
+        "native_split": "train",
+        "task_id": "UID0183"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1948_03.txt"
+        },
+        "native_id": "UID0184",
+        "native_split": "train",
+        "task_id": "UID0184"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1940_10.txt"
+        },
+        "native_id": "UID0187",
+        "native_split": "train",
+        "task_id": "UID0187"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1939_01.txt\r\ntreasury_bulletin_1949_01.txt\r\ntreasury_bulletin_1959_01.txt"
+        },
+        "native_id": "UID0188",
+        "native_split": "train",
+        "task_id": "UID0188"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1939_03.txt\r\ntreasury_bulletin_1940_03.txt"
+        },
+        "native_id": "UID0193",
+        "native_split": "train",
+        "task_id": "UID0193"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2003_09.txt\r\ntreasury_bulletin_2013_09.txt"
+        },
+        "native_id": "UID0194",
+        "native_split": "train",
+        "task_id": "UID0194"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1980_05.txt\r\ntreasury_bulletin_1980_06.txt"
+        },
+        "native_id": "UID0196",
+        "native_split": "train",
+        "task_id": "UID0196"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1975_11.txt"
+        },
+        "native_id": "UID0201",
+        "native_split": "train",
+        "task_id": "UID0201"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1960_04.txt\r\ntreasury_bulletin_1961_04.txt\r\ntreasury_bulletin_1962_04.txt\r\ntreasury_bulletin_1963_04.txt\r\ntreasury_bulletin_1964_04.txt"
+        },
+        "native_id": "UID0203",
+        "native_split": "train",
+        "task_id": "UID0203"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2010_09.txt\r\ntreasury_bulletin_2011_09.txt"
+        },
+        "native_id": "UID0204",
+        "native_split": "train",
+        "task_id": "UID0204"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1960_10.txt\r\ntreasury_bulletin_1965_10.txt"
+        },
+        "native_id": "UID0205",
+        "native_split": "train",
+        "task_id": "UID0205"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1980_06.txt"
+        },
+        "native_id": "UID0207",
+        "native_split": "train",
+        "task_id": "UID0207"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1956_08.txt"
+        },
+        "native_id": "UID0211",
+        "native_split": "train",
+        "task_id": "UID0211"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1970_01.txt"
+        },
+        "native_id": "UID0214",
+        "native_split": "train",
+        "task_id": "UID0214"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1988_03.txt\r\ntreasury_bulletin_1989_03.txt\r\ntreasury_bulletin_1990_03.txt\r\ntreasury_bulletin_1991_03.txt"
+        },
+        "native_id": "UID0215",
+        "native_split": "train",
+        "task_id": "UID0215"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1941_10.txt\r\ntreasury_bulletin_1942_10.txt\r\ntreasury_bulletin_1943_10.txt"
+        },
+        "native_id": "UID0216",
+        "native_split": "train",
+        "task_id": "UID0216"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1962_03.txt"
+        },
+        "native_id": "UID0218",
+        "native_split": "train",
+        "task_id": "UID0218"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2013_06.txt"
+        },
+        "native_id": "UID0219",
+        "native_split": "train",
+        "task_id": "UID0219"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1950_01.txt\r\ntreasury_bulletin_1950_02.txt"
+        },
+        "native_id": "UID0221",
+        "native_split": "train",
+        "task_id": "UID0221"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1991_09.txt\r\ntreasury_bulletin_1996_09.txt"
+        },
+        "native_id": "UID0223",
+        "native_split": "train",
+        "task_id": "UID0223"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1943_01.txt\r\ntreasury_bulletin_1944_01.txt\r\ntreasury_bulletin_1945_01.txt"
+        },
+        "native_id": "UID0224",
+        "native_split": "train",
+        "task_id": "UID0224"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1982_03.txt"
+        },
+        "native_id": "UID0225",
+        "native_split": "train",
+        "task_id": "UID0225"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1953_03.txt\r\ntreasury_bulletin_1954_03.txt\r\ntreasury_bulletin_1955_03.txt"
+        },
+        "native_id": "UID0226",
+        "native_split": "train",
+        "task_id": "UID0226"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1982_11.txt"
+        },
+        "native_id": "UID0227",
+        "native_split": "train",
+        "task_id": "UID0227"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1960_10.txt"
+        },
+        "native_id": "UID0230",
+        "native_split": "train",
+        "task_id": "UID0230"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_2007_09.txt"
+        },
+        "native_id": "UID0237",
+        "native_split": "train",
+        "task_id": "UID0237"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1970_01.txt"
+        },
+        "native_id": "UID0243",
+        "native_split": "train",
+        "task_id": "UID0243"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1960_01.txt\r\ntreasury_bulletin_1960_02.txt"
+        },
+        "native_id": "UID0244",
+        "native_split": "train",
+        "task_id": "UID0244"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1982_08.txt"
+        },
+        "native_id": "UID0245",
+        "native_split": "train",
+        "task_id": "UID0245"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "test",
+          "source_files": "treasury_bulletin_1970_03.txt\r\ntreasury_bulletin_1975_03.txt"
+        },
+        "native_id": "UID0246",
+        "native_split": "train",
+        "task_id": "UID0246"
+      }
+    ],
+    "train": [
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1950_02.txt"
+        },
+        "native_id": "UID0007",
+        "native_split": "train",
+        "task_id": "UID0007"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1982_08.txt"
+        },
+        "native_id": "UID0017",
+        "native_split": "train",
+        "task_id": "UID0017"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1985_03.txt\r\ntreasury_bulletin_1986_03.txt\r\ntreasury_bulletin_1987_03.txt\r\ntreasury_bulletin_1988_03.txt"
+        },
+        "native_id": "UID0018",
+        "native_split": "train",
+        "task_id": "UID0018"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2016_09.txt"
+        },
+        "native_id": "UID0019",
+        "native_split": "train",
+        "task_id": "UID0019"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1970_06.txt\r\ntreasury_bulletin_1964_12.txt"
+        },
+        "native_id": "UID0028",
+        "native_split": "train",
+        "task_id": "UID0028"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1990_09.txt"
+        },
+        "native_id": "UID0030",
+        "native_split": "train",
+        "task_id": "UID0030"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1992_03.txt"
+        },
+        "native_id": "UID0031",
+        "native_split": "train",
+        "task_id": "UID0031"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1939_04.txt"
+        },
+        "native_id": "UID0044",
+        "native_split": "train",
+        "task_id": "UID0044"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1942_02.txt"
+        },
+        "native_id": "UID0049",
+        "native_split": "train",
+        "task_id": "UID0049"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1991_09.txt"
+        },
+        "native_id": "UID0056",
+        "native_split": "train",
+        "task_id": "UID0056"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1998_06.txt\r\ntreasury_bulletin_1995_12.txt"
+        },
+        "native_id": "UID0065",
+        "native_split": "train",
+        "task_id": "UID0065"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1982_03.txt"
+        },
+        "native_id": "UID0073",
+        "native_split": "train",
+        "task_id": "UID0073"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1981_12.txt"
+        },
+        "native_id": "UID0083",
+        "native_split": "train",
+        "task_id": "UID0083"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2019_12.txt\r\ntreasury_bulletin_2018_12.txt"
+        },
+        "native_id": "UID0085",
+        "native_split": "train",
+        "task_id": "UID0085"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2011_12.txt\r\ntreasury_bulletin_2019_12.txt"
+        },
+        "native_id": "UID0101",
+        "native_split": "train",
+        "task_id": "UID0101"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2020_03.txt\r\ntreasury_bulletin_2016_03.txt"
+        },
+        "native_id": "UID0110",
+        "native_split": "train",
+        "task_id": "UID0110"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2001_03.txt\r\ntreasury_bulletin_2002_03.txt\r\ntreasury_bulletin_2003_03.txt"
+        },
+        "native_id": "UID0122",
+        "native_split": "train",
+        "task_id": "UID0122"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1941_12.txt"
+        },
+        "native_id": "UID0123",
+        "native_split": "train",
+        "task_id": "UID0123"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2004_09.txt\r\ntreasury_bulletin_2013_12.txt"
+        },
+        "native_id": "UID0133",
+        "native_split": "train",
+        "task_id": "UID0133"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1972_04.txt\r\ntreasury_bulletin_1973_04.txt\r\ntreasury_bulletin_1974_04.txt\r\ntreasury_bulletin_1975_04.txt\r\ntreasury_bulletin_1976_04.txt"
+        },
+        "native_id": "UID0150",
+        "native_split": "train",
+        "task_id": "UID0150"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2010_03.txt"
+        },
+        "native_id": "UID0165",
+        "native_split": "train",
+        "task_id": "UID0165"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1982_03.txt"
+        },
+        "native_id": "UID0169",
+        "native_split": "train",
+        "task_id": "UID0169"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1956_08.txt"
+        },
+        "native_id": "UID0195",
+        "native_split": "train",
+        "task_id": "UID0195"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1964_01.txt"
+        },
+        "native_id": "UID0212",
+        "native_split": "train",
+        "task_id": "UID0212"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_2001_06.txt\r\ntreasury_bulletin_2006_06.txt"
+        },
+        "native_id": "UID0222",
+        "native_split": "train",
+        "task_id": "UID0222"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1956_03.txt\r\ntreasury_bulletin_1956_04.txt"
+        },
+        "native_id": "UID0228",
+        "native_split": "train",
+        "task_id": "UID0228"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "train",
+          "source_files": "treasury_bulletin_1982_03.txt"
+        },
+        "native_id": "UID0238",
+        "native_split": "train",
+        "task_id": "UID0238"
+      }
+    ],
+    "val": [
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1941_01.txt"
+        },
+        "native_id": "UID0001",
+        "native_split": "train",
+        "task_id": "UID0001"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1970_06.txt"
+        },
+        "native_id": "UID0027",
+        "native_split": "train",
+        "task_id": "UID0027"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_2004_03.txt"
+        },
+        "native_id": "UID0039",
+        "native_split": "train",
+        "task_id": "UID0039"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_2022_12.txt"
+        },
+        "native_id": "UID0086",
+        "native_split": "train",
+        "task_id": "UID0086"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_2015_12.txt\r\ntreasury_bulletin_2020_12.txt"
+        },
+        "native_id": "UID0109",
+        "native_split": "train",
+        "task_id": "UID0109"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1977_03.txt\r\ntreasury_bulletin_1978_03.txt"
+        },
+        "native_id": "UID0154",
+        "native_split": "train",
+        "task_id": "UID0154"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1980_03.txt\r\ntreasury_bulletin_1985_03.txt"
+        },
+        "native_id": "UID0161",
+        "native_split": "train",
+        "task_id": "UID0161"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1960_03.txt"
+        },
+        "native_id": "UID0170",
+        "native_split": "train",
+        "task_id": "UID0170"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1939_10.txt\r\ntreasury_bulletin_1939_11.txt"
+        },
+        "native_id": "UID0190",
+        "native_split": "train",
+        "task_id": "UID0190"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1947_04.txt\r\ntreasury_bulletin_1948_04.txt"
+        },
+        "native_id": "UID0213",
+        "native_split": "train",
+        "task_id": "UID0213"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1939_02.txt"
+        },
+        "native_id": "UID0220",
+        "native_split": "train",
+        "task_id": "UID0220"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1948_04.txt\r\ntreasury_bulletin_1958_04.txt"
+        },
+        "native_id": "UID0233",
+        "native_split": "train",
+        "task_id": "UID0233"
+      },
+      {
+        "extra": {
+          "category": "hard",
+          "skillopt_split": "val",
+          "source_files": "treasury_bulletin_1957_12.txt"
+        },
+        "native_id": "UID0240",
+        "native_split": "train",
+        "task_id": "UID0240"
+      }
+    ]
+  },
+  "version": "1"
+}

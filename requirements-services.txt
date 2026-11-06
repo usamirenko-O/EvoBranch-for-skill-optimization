@@ -1,0 +1,4 @@
+# Optional local proxy and embedding service.
+-r requirements.txt
+litellm[proxy]>=1.40
+sentence-transformers>=3.0

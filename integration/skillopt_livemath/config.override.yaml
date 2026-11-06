@@ -1,0 +1,10 @@
+# SkillOpt overrides for shared LiveMath splits and solver endpoints.
+_base_: ../../SkillOpt/configs/livemathematicianbench/default.yaml
+
+model:
+  backend: openai_compatible
+
+# `env.split_dir` intentionally left unset here -- pass
+# --cfg-options env.split_dir=<path to integration/skillopt_livemath/generated_split>
+# explicitly (see run_smoke_test.sh) so this file has no machine-specific
+# absolute path baked in.

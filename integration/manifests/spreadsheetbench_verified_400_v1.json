@@ -1,0 +1,4083 @@
+{
+  "benchmark": "spreadsheetbench",
+  "content_hash": "a12df576c4133c3fca0cc784298206b9ebe1058226acb421dfce51f2eb30ff02",
+  "counts": {
+    "deployment": 280,
+    "train": 80,
+    "val": 40
+  },
+  "manifest_id": "spreadsheetbench_verified_400_v1",
+  "notes": [
+    "All 400 frozen manifest ids resolve against the local verified_400 dataset.json; the partition is used unchanged.",
+    "Pinned to variant 'verified_400'. SkillGen's own SpreadsheetBench adapter defaults to 'full_912' -- a driver must force this variant.",
+    "5 of the 400 task directories (13284, 32023, 32789, 56274, 58109) use the bare 'initial.xlsx'/'golden.xlsx' naming instead of '1_<id>_init.xlsx'/'1_<id>_golden.xlsx'. SkillOpt's own test-case discovery already handles both, and this adapter delegates to it rather than encoding a second layout rule.",
+    "Default manifest only -- the run-time split is whatever manifest the launcher was given. This default covers the whole verified_400 population.",
+    "Each verified_400 task carries exactly one test case, so the official 'hard' metric (all cases must pass) reduces to per-task pass/fail on this variant; the upstream 912-task variant has three cases per task."
+  ],
+  "role_map": {
+    "deployment": "SkillOpt spreadsheetbench_id_split/test (280)",
+    "native_splits": "none -- verified_400 is a flat 400-task dataset.json",
+    "train": "SkillOpt spreadsheetbench_id_split/train (80)",
+    "val": "SkillOpt spreadsheetbench_id_split/val (40)"
+  },
+  "sampling": {
+    "filter": null,
+    "method": "frozen_upstream_manifest_verbatim",
+    "missing_counts": {
+      "deployment": 0,
+      "train": 0,
+      "val": 0
+    },
+    "seed": null
+  },
+  "source": {
+    "frozen_partition": "SkillOpt/data/spreadsheetbench_id_split",
+    "inputs": [
+      {
+        "path": "SkillOpt/data/spreadsheetbench_id_split/split_manifest.json",
+        "present": true,
+        "sha256": "51f1b431696eb26b338dc75f9c03ea6919e1cf93b4a077fd28e6451855fb1fc7"
+      },
+      {
+        "path": "SkillOpt/data/spreadsheetbench_id_split/train/items.json",
+        "present": true,
+        "sha256": "e46cf20e900250d0efd2e1a11d22d34a05f9352e3c5b5faa43eccf7592c69694"
+      },
+      {
+        "path": "SkillOpt/data/spreadsheetbench_id_split/val/items.json",
+        "present": true,
+        "sha256": "352386755d583fab3141eed82177e1b57c13d5ee89101ed806c0f8ad4beec034"
+      },
+      {
+        "path": "SkillOpt/data/spreadsheetbench_id_split/test/items.json",
+        "present": true,
+        "sha256": "6fc4269f4887208d8edd64a256e9cd6ebec0027daca483c4c98d8de4c800caf9"
+      },
+      {
+        "path": "benchmarks/spreadsheetbench/spreadsheetbench_verified_400/dataset.json",
+        "present": true,
+        "sha256": "bcecaa89a005bd4e3bbe98da150a86e8062c27f262e575d5e47bd9861b3525e7"
+      }
+    ],
+    "materialized_from": "benchmarks/spreadsheetbench/spreadsheetbench_verified_400/dataset.json",
+    "official_scorer": {
+      "note": "SkillOpt's module is a documented faithful port; it is the only cell-value evaluator in this workspace.",
+      "ref": "skillopt.envs.spreadsheetbench.evaluator:evaluate",
+      "upstream": "https://github.com/RUCKBReasoning/SpreadsheetBench (evaluation/evaluation.py)"
+    },
+    "upstream_dataset": "KAKA22/SpreadsheetBench",
+    "upstream_file": "spreadsheetbench_verified_400.tar.gz",
+    "upstream_revision": "ab0b742b0fc95b946f212d80ac7771b5531272e4",
+    "upstream_url": "https://huggingface.co/datasets/KAKA22/SpreadsheetBench",
+    "variant": "verified_400"
+  },
+  "splits": {
+    "deployment": [
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52532"
+        },
+        "native_id": "52532",
+        "native_split": "",
+        "task_id": "52532"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41-47"
+        },
+        "native_id": "41-47",
+        "native_split": "",
+        "task_id": "41-47"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59794"
+        },
+        "native_id": "59794",
+        "native_split": "",
+        "task_id": "59794"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/42515"
+        },
+        "native_id": "42515",
+        "native_split": "",
+        "task_id": "42515"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/493-5"
+        },
+        "native_id": "493-5",
+        "native_split": "",
+        "task_id": "493-5"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41969"
+        },
+        "native_id": "41969",
+        "native_split": "",
+        "task_id": "41969"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49237"
+        },
+        "native_id": "49237",
+        "native_split": "",
+        "task_id": "49237"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/516-46"
+        },
+        "native_id": "516-46",
+        "native_split": "",
+        "task_id": "516-46"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/290-27"
+        },
+        "native_id": "290-27",
+        "native_split": "",
+        "task_id": "290-27"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/32562"
+        },
+        "native_id": "32562",
+        "native_split": "",
+        "task_id": "32562"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/545-35"
+        },
+        "native_id": "545-35",
+        "native_split": "",
+        "task_id": "545-35"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/32293"
+        },
+        "native_id": "32293",
+        "native_split": "",
+        "task_id": "32293"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/42181"
+        },
+        "native_id": "42181",
+        "native_split": "",
+        "task_id": "42181"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/46240"
+        },
+        "native_id": "46240",
+        "native_split": "",
+        "task_id": "46240"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/55817"
+        },
+        "native_id": "55817",
+        "native_split": "",
+        "task_id": "55817"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59358"
+        },
+        "native_id": "59358",
+        "native_split": "",
+        "task_id": "59358"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/44389"
+        },
+        "native_id": "44389",
+        "native_split": "",
+        "task_id": "44389"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/58701"
+        },
+        "native_id": "58701",
+        "native_split": "",
+        "task_id": "58701"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50193"
+        },
+        "native_id": "50193",
+        "native_split": "",
+        "task_id": "50193"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/55976"
+        },
+        "native_id": "55976",
+        "native_split": "",
+        "task_id": "55976"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56378"
+        },
+        "native_id": "56378",
+        "native_split": "",
+        "task_id": "56378"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/438-18"
+        },
+        "native_id": "438-18",
+        "native_split": "",
+        "task_id": "438-18"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50952"
+        },
+        "native_id": "50952",
+        "native_split": "",
+        "task_id": "50952"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/408-5"
+        },
+        "native_id": "408-5",
+        "native_split": "",
+        "task_id": "408-5"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56953"
+        },
+        "native_id": "56953",
+        "native_split": "",
+        "task_id": "56953"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54925"
+        },
+        "native_id": "54925",
+        "native_split": "",
+        "task_id": "54925"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/448-11"
+        },
+        "native_id": "448-11",
+        "native_split": "",
+        "task_id": "448-11"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52917"
+        },
+        "native_id": "52917",
+        "native_split": "",
+        "task_id": "52917"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/382-29"
+        },
+        "native_id": "382-29",
+        "native_split": "",
+        "task_id": "382-29"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/45707"
+        },
+        "native_id": "45707",
+        "native_split": "",
+        "task_id": "45707"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/42526"
+        },
+        "native_id": "42526",
+        "native_split": "",
+        "task_id": "42526"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41978"
+        },
+        "native_id": "41978",
+        "native_split": "",
+        "task_id": "41978"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/146-49"
+        },
+        "native_id": "146-49",
+        "native_split": "",
+        "task_id": "146-49"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/440-24"
+        },
+        "native_id": "440-24",
+        "native_split": "",
+        "task_id": "440-24"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/46167"
+        },
+        "native_id": "46167",
+        "native_split": "",
+        "task_id": "46167"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/230-16"
+        },
+        "native_id": "230-16",
+        "native_split": "",
+        "task_id": "230-16"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54675"
+        },
+        "native_id": "54675",
+        "native_split": "",
+        "task_id": "54675"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41601"
+        },
+        "native_id": "41601",
+        "native_split": "",
+        "task_id": "41601"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41410"
+        },
+        "native_id": "41410",
+        "native_split": "",
+        "task_id": "41410"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50521"
+        },
+        "native_id": "50521",
+        "native_split": "",
+        "task_id": "50521"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/18645"
+        },
+        "native_id": "18645",
+        "native_split": "",
+        "task_id": "18645"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52807"
+        },
+        "native_id": "52807",
+        "native_split": "",
+        "task_id": "52807"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52964"
+        },
+        "native_id": "52964",
+        "native_split": "",
+        "task_id": "52964"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50250"
+        },
+        "native_id": "50250",
+        "native_split": "",
+        "task_id": "50250"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/203-15"
+        },
+        "native_id": "203-15",
+        "native_split": "",
+        "task_id": "203-15"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/37900"
+        },
+        "native_id": "37900",
+        "native_split": "",
+        "task_id": "37900"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/48975"
+        },
+        "native_id": "48975",
+        "native_split": "",
+        "task_id": "48975"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/367-23"
+        },
+        "native_id": "367-23",
+        "native_split": "",
+        "task_id": "367-23"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/60-7"
+        },
+        "native_id": "60-7",
+        "native_split": "",
+        "task_id": "60-7"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/55708"
+        },
+        "native_id": "55708",
+        "native_split": "",
+        "task_id": "55708"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49196"
+        },
+        "native_id": "49196",
+        "native_split": "",
+        "task_id": "49196"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57693"
+        },
+        "native_id": "57693",
+        "native_split": "",
+        "task_id": "57693"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50051"
+        },
+        "native_id": "50051",
+        "native_split": "",
+        "task_id": "50051"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/290-1"
+        },
+        "native_id": "290-1",
+        "native_split": "",
+        "task_id": "290-1"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57262"
+        },
+        "native_id": "57262",
+        "native_split": "",
+        "task_id": "57262"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41589"
+        },
+        "native_id": "41589",
+        "native_split": "",
+        "task_id": "41589"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49300"
+        },
+        "native_id": "49300",
+        "native_split": "",
+        "task_id": "49300"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/37554"
+        },
+        "native_id": "37554",
+        "native_split": "",
+        "task_id": "37554"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/39515"
+        },
+        "native_id": "39515",
+        "native_split": "",
+        "task_id": "39515"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/37086"
+        },
+        "native_id": "37086",
+        "native_split": "",
+        "task_id": "37086"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/36277"
+        },
+        "native_id": "36277",
+        "native_split": "",
+        "task_id": "36277"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/374-18"
+        },
+        "native_id": "374-18",
+        "native_split": "",
+        "task_id": "374-18"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50971"
+        },
+        "native_id": "50971",
+        "native_split": "",
+        "task_id": "50971"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/37229"
+        },
+        "native_id": "37229",
+        "native_split": "",
+        "task_id": "37229"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57033"
+        },
+        "native_id": "57033",
+        "native_split": "",
+        "task_id": "57033"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/477-45"
+        },
+        "native_id": "477-45",
+        "native_split": "",
+        "task_id": "477-45"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/531-18"
+        },
+        "native_id": "531-18",
+        "native_split": "",
+        "task_id": "531-18"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/38074"
+        },
+        "native_id": "38074",
+        "native_split": "",
+        "task_id": "38074"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56599"
+        },
+        "native_id": "56599",
+        "native_split": "",
+        "task_id": "56599"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/31746"
+        },
+        "native_id": "31746",
+        "native_split": "",
+        "task_id": "31746"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51556"
+        },
+        "native_id": "51556",
+        "native_split": "",
+        "task_id": "51556"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/48924"
+        },
+        "native_id": "48924",
+        "native_split": "",
+        "task_id": "48924"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/423-16"
+        },
+        "native_id": "423-16",
+        "native_split": "",
+        "task_id": "423-16"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/43213"
+        },
+        "native_id": "43213",
+        "native_split": "",
+        "task_id": "43213"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49801"
+        },
+        "native_id": "49801",
+        "native_split": "",
+        "task_id": "49801"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54717"
+        },
+        "native_id": "54717",
+        "native_split": "",
+        "task_id": "54717"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/58147"
+        },
+        "native_id": "58147",
+        "native_split": "",
+        "task_id": "58147"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54474"
+        },
+        "native_id": "54474",
+        "native_split": "",
+        "task_id": "54474"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56921"
+        },
+        "native_id": "56921",
+        "native_split": "",
+        "task_id": "56921"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/39190"
+        },
+        "native_id": "39190",
+        "native_split": "",
+        "task_id": "39190"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/168-17"
+        },
+        "native_id": "168-17",
+        "native_split": "",
+        "task_id": "168-17"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49945"
+        },
+        "native_id": "49945",
+        "native_split": "",
+        "task_id": "49945"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/32093"
+        },
+        "native_id": "32093",
+        "native_split": "",
+        "task_id": "32093"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/17111"
+        },
+        "native_id": "17111",
+        "native_split": "",
+        "task_id": "17111"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/120-24"
+        },
+        "native_id": "120-24",
+        "native_split": "",
+        "task_id": "120-24"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/97-36"
+        },
+        "native_id": "97-36",
+        "native_split": "",
+        "task_id": "97-36"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59639"
+        },
+        "native_id": "59639",
+        "native_split": "",
+        "task_id": "59639"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/567-21"
+        },
+        "native_id": "567-21",
+        "native_split": "",
+        "task_id": "567-21"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/48643"
+        },
+        "native_id": "48643",
+        "native_split": "",
+        "task_id": "48643"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/1925"
+        },
+        "native_id": "1925",
+        "native_split": "",
+        "task_id": "1925"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/40959"
+        },
+        "native_id": "40959",
+        "native_split": "",
+        "task_id": "40959"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51431"
+        },
+        "native_id": "51431",
+        "native_split": "",
+        "task_id": "51431"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/37462"
+        },
+        "native_id": "37462",
+        "native_split": "",
+        "task_id": "37462"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/53161"
+        },
+        "native_id": "53161",
+        "native_split": "",
+        "task_id": "53161"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/283-32"
+        },
+        "native_id": "283-32",
+        "native_split": "",
+        "task_id": "283-32"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/1563"
+        },
+        "native_id": "1563",
+        "native_split": "",
+        "task_id": "1563"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/599-9"
+        },
+        "native_id": "599-9",
+        "native_split": "",
+        "task_id": "599-9"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50682"
+        },
+        "native_id": "50682",
+        "native_split": "",
+        "task_id": "50682"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/304-35"
+        },
+        "native_id": "304-35",
+        "native_split": "",
+        "task_id": "304-35"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/297-42"
+        },
+        "native_id": "297-42",
+        "native_split": "",
+        "task_id": "297-42"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/40478"
+        },
+        "native_id": "40478",
+        "native_split": "",
+        "task_id": "40478"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/9391"
+        },
+        "native_id": "9391",
+        "native_split": "",
+        "task_id": "9391"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/269-44"
+        },
+        "native_id": "269-44",
+        "native_split": "",
+        "task_id": "269-44"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/208-20"
+        },
+        "native_id": "208-20",
+        "native_split": "",
+        "task_id": "208-20"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/45063"
+        },
+        "native_id": "45063",
+        "native_split": "",
+        "task_id": "45063"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54590"
+        },
+        "native_id": "54590",
+        "native_split": "",
+        "task_id": "54590"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/3002"
+        },
+        "native_id": "3002",
+        "native_split": "",
+        "task_id": "3002"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/9448"
+        },
+        "native_id": "9448",
+        "native_split": "",
+        "task_id": "9448"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/388-47"
+        },
+        "native_id": "388-47",
+        "native_split": "",
+        "task_id": "388-47"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51354"
+        },
+        "native_id": "51354",
+        "native_split": "",
+        "task_id": "51354"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/24-23"
+        },
+        "native_id": "24-23",
+        "native_split": "",
+        "task_id": "24-23"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52541"
+        },
+        "native_id": "52541",
+        "native_split": "",
+        "task_id": "52541"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/353-29"
+        },
+        "native_id": "353-29",
+        "native_split": "",
+        "task_id": "353-29"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/45300"
+        },
+        "native_id": "45300",
+        "native_split": "",
+        "task_id": "45300"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/13-1"
+        },
+        "native_id": "13-1",
+        "native_split": "",
+        "task_id": "13-1"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/58942"
+        },
+        "native_id": "58942",
+        "native_split": "",
+        "task_id": "58942"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/45944"
+        },
+        "native_id": "45944",
+        "native_split": "",
+        "task_id": "45944"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52305"
+        },
+        "native_id": "52305",
+        "native_split": "",
+        "task_id": "52305"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52575"
+        },
+        "native_id": "52575",
+        "native_split": "",
+        "task_id": "52575"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52220"
+        },
+        "native_id": "52220",
+        "native_split": "",
+        "task_id": "52220"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/91-34"
+        },
+        "native_id": "91-34",
+        "native_split": "",
+        "task_id": "91-34"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/40757"
+        },
+        "native_id": "40757",
+        "native_split": "",
+        "task_id": "40757"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/399-14"
+        },
+        "native_id": "399-14",
+        "native_split": "",
+        "task_id": "399-14"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/82-38"
+        },
+        "native_id": "82-38",
+        "native_split": "",
+        "task_id": "82-38"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/156-14"
+        },
+        "native_id": "156-14",
+        "native_split": "",
+        "task_id": "156-14"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/45896"
+        },
+        "native_id": "45896",
+        "native_split": "",
+        "task_id": "45896"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/33157"
+        },
+        "native_id": "33157",
+        "native_split": "",
+        "task_id": "33157"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/48257"
+        },
+        "native_id": "48257",
+        "native_split": "",
+        "task_id": "48257"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/4714"
+        },
+        "native_id": "4714",
+        "native_split": "",
+        "task_id": "4714"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/302-1"
+        },
+        "native_id": "302-1",
+        "native_split": "",
+        "task_id": "302-1"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/47842"
+        },
+        "native_id": "47842",
+        "native_split": "",
+        "task_id": "47842"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/36764"
+        },
+        "native_id": "36764",
+        "native_split": "",
+        "task_id": "36764"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/455-35"
+        },
+        "native_id": "455-35",
+        "native_split": "",
+        "task_id": "455-35"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/14240"
+        },
+        "native_id": "14240",
+        "native_split": "",
+        "task_id": "14240"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/33722"
+        },
+        "native_id": "33722",
+        "native_split": "",
+        "task_id": "33722"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/387-16"
+        },
+        "native_id": "387-16",
+        "native_split": "",
+        "task_id": "387-16"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/35739"
+        },
+        "native_id": "35739",
+        "native_split": "",
+        "task_id": "35739"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/44296"
+        },
+        "native_id": "44296",
+        "native_split": "",
+        "task_id": "44296"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/17-35"
+        },
+        "native_id": "17-35",
+        "native_split": "",
+        "task_id": "17-35"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54513"
+        },
+        "native_id": "54513",
+        "native_split": "",
+        "task_id": "54513"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/343-20"
+        },
+        "native_id": "343-20",
+        "native_split": "",
+        "task_id": "343-20"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/9111"
+        },
+        "native_id": "9111",
+        "native_split": "",
+        "task_id": "9111"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56419"
+        },
+        "native_id": "56419",
+        "native_split": "",
+        "task_id": "56419"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59884"
+        },
+        "native_id": "59884",
+        "native_split": "",
+        "task_id": "59884"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/44017"
+        },
+        "native_id": "44017",
+        "native_split": "",
+        "task_id": "44017"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/53449"
+        },
+        "native_id": "53449",
+        "native_split": "",
+        "task_id": "53449"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/191-40"
+        },
+        "native_id": "191-40",
+        "native_split": "",
+        "task_id": "191-40"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/28-7"
+        },
+        "native_id": "28-7",
+        "native_split": "",
+        "task_id": "28-7"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/31202"
+        },
+        "native_id": "31202",
+        "native_split": "",
+        "task_id": "31202"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/18935"
+        },
+        "native_id": "18935",
+        "native_split": "",
+        "task_id": "18935"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51359"
+        },
+        "native_id": "51359",
+        "native_split": "",
+        "task_id": "51359"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51586"
+        },
+        "native_id": "51586",
+        "native_split": "",
+        "task_id": "51586"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/547-18"
+        },
+        "native_id": "547-18",
+        "native_split": "",
+        "task_id": "547-18"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/44913"
+        },
+        "native_id": "44913",
+        "native_split": "",
+        "task_id": "44913"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/45937"
+        },
+        "native_id": "45937",
+        "native_split": "",
+        "task_id": "45937"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/334-11"
+        },
+        "native_id": "334-11",
+        "native_split": "",
+        "task_id": "334-11"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/177-6"
+        },
+        "native_id": "177-6",
+        "native_split": "",
+        "task_id": "177-6"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/384-4"
+        },
+        "native_id": "384-4",
+        "native_split": "",
+        "task_id": "384-4"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/130-9"
+        },
+        "native_id": "130-9",
+        "native_split": "",
+        "task_id": "130-9"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/32789"
+        },
+        "native_id": "32789",
+        "native_split": "",
+        "task_id": "32789"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/36191"
+        },
+        "native_id": "36191",
+        "native_split": "",
+        "task_id": "36191"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/183-8"
+        },
+        "native_id": "183-8",
+        "native_split": "",
+        "task_id": "183-8"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59160"
+        },
+        "native_id": "59160",
+        "native_split": "",
+        "task_id": "59160"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56225"
+        },
+        "native_id": "56225",
+        "native_split": "",
+        "task_id": "56225"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54196"
+        },
+        "native_id": "54196",
+        "native_split": "",
+        "task_id": "54196"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/7665"
+        },
+        "native_id": "7665",
+        "native_split": "",
+        "task_id": "7665"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/38537"
+        },
+        "native_id": "38537",
+        "native_split": "",
+        "task_id": "38537"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41420"
+        },
+        "native_id": "41420",
+        "native_split": "",
+        "task_id": "41420"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56915"
+        },
+        "native_id": "56915",
+        "native_split": "",
+        "task_id": "56915"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/15380"
+        },
+        "native_id": "15380",
+        "native_split": "",
+        "task_id": "15380"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59224"
+        },
+        "native_id": "59224",
+        "native_split": "",
+        "task_id": "59224"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57590"
+        },
+        "native_id": "57590",
+        "native_split": "",
+        "task_id": "57590"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/209-30"
+        },
+        "native_id": "209-30",
+        "native_split": "",
+        "task_id": "209-30"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/15387"
+        },
+        "native_id": "15387",
+        "native_split": "",
+        "task_id": "15387"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/53167"
+        },
+        "native_id": "53167",
+        "native_split": "",
+        "task_id": "53167"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/34210"
+        },
+        "native_id": "34210",
+        "native_split": "",
+        "task_id": "34210"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50486"
+        },
+        "native_id": "50486",
+        "native_split": "",
+        "task_id": "50486"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50811"
+        },
+        "native_id": "50811",
+        "native_split": "",
+        "task_id": "50811"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/45738"
+        },
+        "native_id": "45738",
+        "native_split": "",
+        "task_id": "45738"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/488-14"
+        },
+        "native_id": "488-14",
+        "native_split": "",
+        "task_id": "488-14"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/61-4"
+        },
+        "native_id": "61-4",
+        "native_split": "",
+        "task_id": "61-4"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/38969"
+        },
+        "native_id": "38969",
+        "native_split": "",
+        "task_id": "38969"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54242"
+        },
+        "native_id": "54242",
+        "native_split": "",
+        "task_id": "54242"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/47933"
+        },
+        "native_id": "47933",
+        "native_split": "",
+        "task_id": "47933"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57989"
+        },
+        "native_id": "57989",
+        "native_split": "",
+        "task_id": "57989"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/535-20"
+        },
+        "native_id": "535-20",
+        "native_split": "",
+        "task_id": "535-20"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/469-9"
+        },
+        "native_id": "469-9",
+        "native_split": "",
+        "task_id": "469-9"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/48608"
+        },
+        "native_id": "48608",
+        "native_split": "",
+        "task_id": "48608"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/55468"
+        },
+        "native_id": "55468",
+        "native_split": "",
+        "task_id": "55468"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/44266"
+        },
+        "native_id": "44266",
+        "native_split": "",
+        "task_id": "44266"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/38985"
+        },
+        "native_id": "38985",
+        "native_split": "",
+        "task_id": "38985"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59902"
+        },
+        "native_id": "59902",
+        "native_split": "",
+        "task_id": "59902"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/16511"
+        },
+        "native_id": "16511",
+        "native_split": "",
+        "task_id": "16511"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54274"
+        },
+        "native_id": "54274",
+        "native_split": "",
+        "task_id": "54274"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59511"
+        },
+        "native_id": "59511",
+        "native_split": "",
+        "task_id": "59511"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41265"
+        },
+        "native_id": "41265",
+        "native_split": "",
+        "task_id": "41265"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/374-31"
+        },
+        "native_id": "374-31",
+        "native_split": "",
+        "task_id": "374-31"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52233"
+        },
+        "native_id": "52233",
+        "native_split": "",
+        "task_id": "52233"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/79-7"
+        },
+        "native_id": "79-7",
+        "native_split": "",
+        "task_id": "79-7"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/38823"
+        },
+        "native_id": "38823",
+        "native_split": "",
+        "task_id": "38823"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/486-17"
+        },
+        "native_id": "486-17",
+        "native_split": "",
+        "task_id": "486-17"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49667"
+        },
+        "native_id": "49667",
+        "native_split": "",
+        "task_id": "49667"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50796"
+        },
+        "native_id": "50796",
+        "native_split": "",
+        "task_id": "50796"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/359-21"
+        },
+        "native_id": "359-21",
+        "native_split": "",
+        "task_id": "359-21"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50526"
+        },
+        "native_id": "50526",
+        "native_split": "",
+        "task_id": "50526"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/13284"
+        },
+        "native_id": "13284",
+        "native_split": "",
+        "task_id": "13284"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/55977"
+        },
+        "native_id": "55977",
+        "native_split": "",
+        "task_id": "55977"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/58723"
+        },
+        "native_id": "58723",
+        "native_split": "",
+        "task_id": "58723"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/157-4"
+        },
+        "native_id": "157-4",
+        "native_split": "",
+        "task_id": "157-4"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/58904"
+        },
+        "native_id": "58904",
+        "native_split": "",
+        "task_id": "58904"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/56920"
+        },
+        "native_id": "56920",
+        "native_split": "",
+        "task_id": "56920"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41691"
+        },
+        "native_id": "41691",
+        "native_split": "",
+        "task_id": "41691"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/534-26"
+        },
+        "native_id": "534-26",
+        "native_split": "",
+        "task_id": "534-26"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/341-40"
+        },
+        "native_id": "341-40",
+        "native_split": "",
+        "task_id": "341-40"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/73-45"
+        },
+        "native_id": "73-45",
+        "native_split": "",
+        "task_id": "73-45"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/409-45"
+        },
+        "native_id": "409-45",
+        "native_split": "",
+        "task_id": "409-45"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49857"
+        },
+        "native_id": "49857",
+        "native_split": "",
+        "task_id": "49857"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50324"
+        },
+        "native_id": "50324",
+        "native_split": "",
+        "task_id": "50324"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/53117"
+        },
+        "native_id": "53117",
+        "native_split": "",
+        "task_id": "53117"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/53994"
+        },
+        "native_id": "53994",
+        "native_split": "",
+        "task_id": "53994"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/42198"
+        },
+        "native_id": "42198",
+        "native_split": "",
+        "task_id": "42198"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/42930"
+        },
+        "native_id": "42930",
+        "native_split": "",
+        "task_id": "42930"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/84-40"
+        },
+        "native_id": "84-40",
+        "native_split": "",
+        "task_id": "84-40"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51262"
+        },
+        "native_id": "51262",
+        "native_split": "",
+        "task_id": "51262"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/236-22"
+        },
+        "native_id": "236-22",
+        "native_split": "",
+        "task_id": "236-22"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/41348"
+        },
+        "native_id": "41348",
+        "native_split": "",
+        "task_id": "41348"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/15671"
+        },
+        "native_id": "15671",
+        "native_split": "",
+        "task_id": "15671"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/333-29"
+        },
+        "native_id": "333-29",
+        "native_split": "",
+        "task_id": "333-29"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/38703"
+        },
+        "native_id": "38703",
+        "native_split": "",
+        "task_id": "38703"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/52050"
+        },
+        "native_id": "52050",
+        "native_split": "",
+        "task_id": "52050"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/49036"
+        },
+        "native_id": "49036",
+        "native_split": "",
+        "task_id": "49036"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50088"
+        },
+        "native_id": "50088",
+        "native_split": "",
+        "task_id": "50088"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/147-48"
+        },
+        "native_id": "147-48",
+        "native_split": "",
+        "task_id": "147-48"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51289"
+        },
+        "native_id": "51289",
+        "native_split": "",
+        "task_id": "51289"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57612"
+        },
+        "native_id": "57612",
+        "native_split": "",
+        "task_id": "57612"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59129"
+        },
+        "native_id": "59129",
+        "native_split": "",
+        "task_id": "59129"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/48969"
+        },
+        "native_id": "48969",
+        "native_split": "",
+        "task_id": "48969"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/496-15"
+        },
+        "native_id": "496-15",
+        "native_split": "",
+        "task_id": "496-15"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/341-14"
+        },
+        "native_id": "341-14",
+        "native_split": "",
+        "task_id": "341-14"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/47827"
+        },
+        "native_id": "47827",
+        "native_split": "",
+        "task_id": "47827"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/48982"
+        },
+        "native_id": "48982",
+        "native_split": "",
+        "task_id": "48982"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/58032"
+        },
+        "native_id": "58032",
+        "native_split": "",
+        "task_id": "58032"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/42902"
+        },
+        "native_id": "42902",
+        "native_split": "",
+        "task_id": "42902"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/353-6"
+        },
+        "native_id": "353-6",
+        "native_split": "",
+        "task_id": "353-6"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/23-24"
+        },
+        "native_id": "23-24",
+        "native_split": "",
+        "task_id": "23-24"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/39667"
+        },
+        "native_id": "39667",
+        "native_split": "",
+        "task_id": "39667"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50631"
+        },
+        "native_id": "50631",
+        "native_split": "",
+        "task_id": "50631"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/11276"
+        },
+        "native_id": "11276",
+        "native_split": "",
+        "task_id": "11276"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/510-3"
+        },
+        "native_id": "510-3",
+        "native_split": "",
+        "task_id": "510-3"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/3911"
+        },
+        "native_id": "3911",
+        "native_split": "",
+        "task_id": "3911"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/58687"
+        },
+        "native_id": "58687",
+        "native_split": "",
+        "task_id": "58687"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/43657"
+        },
+        "native_id": "43657",
+        "native_split": "",
+        "task_id": "43657"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/55085"
+        },
+        "native_id": "55085",
+        "native_split": "",
+        "task_id": "55085"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/55260"
+        },
+        "native_id": "55260",
+        "native_split": "",
+        "task_id": "55260"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/416-27"
+        },
+        "native_id": "416-27",
+        "native_split": "",
+        "task_id": "416-27"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/44628"
+        },
+        "native_id": "44628",
+        "native_split": "",
+        "task_id": "44628"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/269-43"
+        },
+        "native_id": "269-43",
+        "native_split": "",
+        "task_id": "269-43"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/51680"
+        },
+        "native_id": "51680",
+        "native_split": "",
+        "task_id": "51680"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/35747"
+        },
+        "native_id": "35747",
+        "native_split": "",
+        "task_id": "35747"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/547-43"
+        },
+        "native_id": "547-43",
+        "native_split": "",
+        "task_id": "547-43"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/496-34"
+        },
+        "native_id": "496-34",
+        "native_split": "",
+        "task_id": "496-34"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/142-19"
+        },
+        "native_id": "142-19",
+        "native_split": "",
+        "task_id": "142-19"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/279-23"
+        },
+        "native_id": "279-23",
+        "native_split": "",
+        "task_id": "279-23"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/280-17"
+        },
+        "native_id": "280-17",
+        "native_split": "",
+        "task_id": "280-17"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/5835"
+        },
+        "native_id": "5835",
+        "native_split": "",
+        "task_id": "5835"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/50683"
+        },
+        "native_id": "50683",
+        "native_split": "",
+        "task_id": "50683"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/109-21"
+        },
+        "native_id": "109-21",
+        "native_split": "",
+        "task_id": "109-21"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/42216"
+        },
+        "native_id": "42216",
+        "native_split": "",
+        "task_id": "42216"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/59734"
+        },
+        "native_id": "59734",
+        "native_split": "",
+        "task_id": "59734"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57232"
+        },
+        "native_id": "57232",
+        "native_split": "",
+        "task_id": "57232"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/160-6"
+        },
+        "native_id": "160-6",
+        "native_split": "",
+        "task_id": "160-6"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57117"
+        },
+        "native_id": "57117",
+        "native_split": "",
+        "task_id": "57117"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/188-39"
+        },
+        "native_id": "188-39",
+        "native_split": "",
+        "task_id": "188-39"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/524-31"
+        },
+        "native_id": "524-31",
+        "native_split": "",
+        "task_id": "524-31"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/12307"
+        },
+        "native_id": "12307",
+        "native_split": "",
+        "task_id": "12307"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/39432"
+        },
+        "native_id": "39432",
+        "native_split": "",
+        "task_id": "39432"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/57354"
+        },
+        "native_id": "57354",
+        "native_split": "",
+        "task_id": "57354"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/267-21"
+        },
+        "native_id": "267-21",
+        "native_split": "",
+        "task_id": "267-21"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/178-22"
+        },
+        "native_id": "178-22",
+        "native_split": "",
+        "task_id": "178-22"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "test",
+          "spreadsheet_path": "spreadsheet/54667"
+        },
+        "native_id": "54667",
+        "native_split": "",
+        "task_id": "54667"
+      }
+    ],
+    "train": [
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/32438"
+        },
+        "native_id": "32438",
+        "native_split": "",
+        "task_id": "32438"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/398-14"
+        },
+        "native_id": "398-14",
+        "native_split": "",
+        "task_id": "398-14"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/47766"
+        },
+        "native_id": "47766",
+        "native_split": "",
+        "task_id": "47766"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/48365"
+        },
+        "native_id": "48365",
+        "native_split": "",
+        "task_id": "48365"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/32255"
+        },
+        "native_id": "32255",
+        "native_split": "",
+        "task_id": "32255"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/10747"
+        },
+        "native_id": "10747",
+        "native_split": "",
+        "task_id": "10747"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/50916"
+        },
+        "native_id": "50916",
+        "native_split": "",
+        "task_id": "50916"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/577-40"
+        },
+        "native_id": "577-40",
+        "native_split": "",
+        "task_id": "577-40"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/35742"
+        },
+        "native_id": "35742",
+        "native_split": "",
+        "task_id": "35742"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/46121"
+        },
+        "native_id": "46121",
+        "native_split": "",
+        "task_id": "46121"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/51090"
+        },
+        "native_id": "51090",
+        "native_split": "",
+        "task_id": "51090"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/51249"
+        },
+        "native_id": "51249",
+        "native_split": "",
+        "task_id": "51249"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/82-30"
+        },
+        "native_id": "82-30",
+        "native_split": "",
+        "task_id": "82-30"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/56274"
+        },
+        "native_id": "56274",
+        "native_split": "",
+        "task_id": "56274"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/57445"
+        },
+        "native_id": "57445",
+        "native_split": "",
+        "task_id": "57445"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/46646"
+        },
+        "native_id": "46646",
+        "native_split": "",
+        "task_id": "46646"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/105-24"
+        },
+        "native_id": "105-24",
+        "native_split": "",
+        "task_id": "105-24"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/6239"
+        },
+        "native_id": "6239",
+        "native_split": "",
+        "task_id": "6239"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/414-20"
+        },
+        "native_id": "414-20",
+        "native_split": "",
+        "task_id": "414-20"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/165-23"
+        },
+        "native_id": "165-23",
+        "native_split": "",
+        "task_id": "165-23"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/40892"
+        },
+        "native_id": "40892",
+        "native_split": "",
+        "task_id": "40892"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/48745"
+        },
+        "native_id": "48745",
+        "native_split": "",
+        "task_id": "48745"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/32612"
+        },
+        "native_id": "32612",
+        "native_split": "",
+        "task_id": "32612"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/325-44"
+        },
+        "native_id": "325-44",
+        "native_split": "",
+        "task_id": "325-44"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/262-17"
+        },
+        "native_id": "262-17",
+        "native_split": "",
+        "task_id": "262-17"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/141-20"
+        },
+        "native_id": "141-20",
+        "native_split": "",
+        "task_id": "141-20"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/52216"
+        },
+        "native_id": "52216",
+        "native_split": "",
+        "task_id": "52216"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/22-47"
+        },
+        "native_id": "22-47",
+        "native_split": "",
+        "task_id": "22-47"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/55421"
+        },
+        "native_id": "55421",
+        "native_split": "",
+        "task_id": "55421"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/56427"
+        },
+        "native_id": "56427",
+        "native_split": "",
+        "task_id": "56427"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/36097"
+        },
+        "native_id": "36097",
+        "native_split": "",
+        "task_id": "36097"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/32902"
+        },
+        "native_id": "32902",
+        "native_split": "",
+        "task_id": "32902"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/32023"
+        },
+        "native_id": "32023",
+        "native_split": "",
+        "task_id": "32023"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/1818"
+        },
+        "native_id": "1818",
+        "native_split": "",
+        "task_id": "1818"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/170-13"
+        },
+        "native_id": "170-13",
+        "native_split": "",
+        "task_id": "170-13"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/66-24"
+        },
+        "native_id": "66-24",
+        "native_split": "",
+        "task_id": "66-24"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/58949"
+        },
+        "native_id": "58949",
+        "native_split": "",
+        "task_id": "58949"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/42354"
+        },
+        "native_id": "42354",
+        "native_split": "",
+        "task_id": "42354"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/194-19"
+        },
+        "native_id": "194-19",
+        "native_split": "",
+        "task_id": "194-19"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/31915"
+        },
+        "native_id": "31915",
+        "native_split": "",
+        "task_id": "31915"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/58499"
+        },
+        "native_id": "58499",
+        "native_split": "",
+        "task_id": "58499"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/45372"
+        },
+        "native_id": "45372",
+        "native_split": "",
+        "task_id": "45372"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/11842"
+        },
+        "native_id": "11842",
+        "native_split": "",
+        "task_id": "11842"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/57558"
+        },
+        "native_id": "57558",
+        "native_split": "",
+        "task_id": "57558"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/472-15"
+        },
+        "native_id": "472-15",
+        "native_split": "",
+        "task_id": "472-15"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/55060"
+        },
+        "native_id": "55060",
+        "native_split": "",
+        "task_id": "55060"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/31011"
+        },
+        "native_id": "31011",
+        "native_split": "",
+        "task_id": "31011"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/408-39"
+        },
+        "native_id": "408-39",
+        "native_split": "",
+        "task_id": "408-39"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/54085"
+        },
+        "native_id": "54085",
+        "native_split": "",
+        "task_id": "54085"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/39903"
+        },
+        "native_id": "39903",
+        "native_split": "",
+        "task_id": "39903"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/48983"
+        },
+        "native_id": "48983",
+        "native_split": "",
+        "task_id": "48983"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/108-24"
+        },
+        "native_id": "108-24",
+        "native_split": "",
+        "task_id": "108-24"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/58484"
+        },
+        "native_id": "58484",
+        "native_split": "",
+        "task_id": "58484"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/118-50"
+        },
+        "native_id": "118-50",
+        "native_split": "",
+        "task_id": "118-50"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/10452"
+        },
+        "native_id": "10452",
+        "native_split": "",
+        "task_id": "10452"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/39931"
+        },
+        "native_id": "39931",
+        "native_split": "",
+        "task_id": "39931"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/3413"
+        },
+        "native_id": "3413",
+        "native_split": "",
+        "task_id": "3413"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/247-24"
+        },
+        "native_id": "247-24",
+        "native_split": "",
+        "task_id": "247-24"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/56786"
+        },
+        "native_id": "56786",
+        "native_split": "",
+        "task_id": "56786"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/55965"
+        },
+        "native_id": "55965",
+        "native_split": "",
+        "task_id": "55965"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/379-36"
+        },
+        "native_id": "379-36",
+        "native_split": "",
+        "task_id": "379-36"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/58109"
+        },
+        "native_id": "58109",
+        "native_split": "",
+        "task_id": "58109"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/433-47"
+        },
+        "native_id": "433-47",
+        "native_split": "",
+        "task_id": "433-47"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/192-22"
+        },
+        "native_id": "192-22",
+        "native_split": "",
+        "task_id": "192-22"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/49333"
+        },
+        "native_id": "49333",
+        "native_split": "",
+        "task_id": "49333"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/493-18"
+        },
+        "native_id": "493-18",
+        "native_split": "",
+        "task_id": "493-18"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/54638"
+        },
+        "native_id": "54638",
+        "native_split": "",
+        "task_id": "54638"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/34033"
+        },
+        "native_id": "34033",
+        "native_split": "",
+        "task_id": "34033"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/30930"
+        },
+        "native_id": "30930",
+        "native_split": "",
+        "task_id": "30930"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/585-41"
+        },
+        "native_id": "585-41",
+        "native_split": "",
+        "task_id": "585-41"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/32337"
+        },
+        "native_id": "32337",
+        "native_split": "",
+        "task_id": "32337"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/55427"
+        },
+        "native_id": "55427",
+        "native_split": "",
+        "task_id": "55427"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/263-1"
+        },
+        "native_id": "263-1",
+        "native_split": "",
+        "task_id": "263-1"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/254-34"
+        },
+        "native_id": "254-34",
+        "native_split": "",
+        "task_id": "254-34"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/57113"
+        },
+        "native_id": "57113",
+        "native_split": "",
+        "task_id": "57113"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/57743"
+        },
+        "native_id": "57743",
+        "native_split": "",
+        "task_id": "57743"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/43589"
+        },
+        "native_id": "43589",
+        "native_split": "",
+        "task_id": "43589"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/250-20"
+        },
+        "native_id": "250-20",
+        "native_split": "",
+        "task_id": "250-20"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/48080"
+        },
+        "native_id": "48080",
+        "native_split": "",
+        "task_id": "48080"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "train",
+          "spreadsheet_path": "spreadsheet/370-43"
+        },
+        "native_id": "370-43",
+        "native_split": "",
+        "task_id": "370-43"
+      }
+    ],
+    "val": [
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/45635"
+        },
+        "native_id": "45635",
+        "native_split": "",
+        "task_id": "45635"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/560-12"
+        },
+        "native_id": "560-12",
+        "native_split": "",
+        "task_id": "560-12"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/55049"
+        },
+        "native_id": "55049",
+        "native_split": "",
+        "task_id": "55049"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/9569"
+        },
+        "native_id": "9569",
+        "native_split": "",
+        "task_id": "9569"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/7902"
+        },
+        "native_id": "7902",
+        "native_split": "",
+        "task_id": "7902"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/227-40"
+        },
+        "native_id": "227-40",
+        "native_split": "",
+        "task_id": "227-40"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/463-17"
+        },
+        "native_id": "463-17",
+        "native_split": "",
+        "task_id": "463-17"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/54144"
+        },
+        "native_id": "54144",
+        "native_split": "",
+        "task_id": "54144"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/80-42"
+        },
+        "native_id": "80-42",
+        "native_split": "",
+        "task_id": "80-42"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/2768"
+        },
+        "native_id": "2768",
+        "native_split": "",
+        "task_id": "2768"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/37456"
+        },
+        "native_id": "37456",
+        "native_split": "",
+        "task_id": "37456"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/12864"
+        },
+        "native_id": "12864",
+        "native_split": "",
+        "task_id": "12864"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/55979"
+        },
+        "native_id": "55979",
+        "native_split": "",
+        "task_id": "55979"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/48620"
+        },
+        "native_id": "48620",
+        "native_split": "",
+        "task_id": "48620"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/48588"
+        },
+        "native_id": "48588",
+        "native_split": "",
+        "task_id": "48588"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/395-36"
+        },
+        "native_id": "395-36",
+        "native_split": "",
+        "task_id": "395-36"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/382-10"
+        },
+        "native_id": "382-10",
+        "native_split": "",
+        "task_id": "382-10"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/59595"
+        },
+        "native_id": "59595",
+        "native_split": "",
+        "task_id": "59595"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/53383"
+        },
+        "native_id": "53383",
+        "native_split": "",
+        "task_id": "53383"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/48921"
+        },
+        "native_id": "48921",
+        "native_split": "",
+        "task_id": "48921"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/416-15"
+        },
+        "native_id": "416-15",
+        "native_split": "",
+        "task_id": "416-15"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/47798"
+        },
+        "native_id": "47798",
+        "native_split": "",
+        "task_id": "47798"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/56563"
+        },
+        "native_id": "56563",
+        "native_split": "",
+        "task_id": "56563"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/46897"
+        },
+        "native_id": "46897",
+        "native_split": "",
+        "task_id": "46897"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/9726"
+        },
+        "native_id": "9726",
+        "native_split": "",
+        "task_id": "9726"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/50768"
+        },
+        "native_id": "50768",
+        "native_split": "",
+        "task_id": "50768"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/51-12"
+        },
+        "native_id": "51-12",
+        "native_split": "",
+        "task_id": "51-12"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/31628"
+        },
+        "native_id": "31628",
+        "native_split": "",
+        "task_id": "31628"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/39046"
+        },
+        "native_id": "39046",
+        "native_split": "",
+        "task_id": "39046"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/8942"
+        },
+        "native_id": "8942",
+        "native_split": "",
+        "task_id": "8942"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/48527"
+        },
+        "native_id": "48527",
+        "native_split": "",
+        "task_id": "48527"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/59196"
+        },
+        "native_id": "59196",
+        "native_split": "",
+        "task_id": "59196"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/6698"
+        },
+        "native_id": "6698",
+        "native_split": "",
+        "task_id": "6698"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/43436"
+        },
+        "native_id": "43436",
+        "native_split": "",
+        "task_id": "43436"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/38462"
+        },
+        "native_id": "38462",
+        "native_split": "",
+        "task_id": "38462"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/402-43"
+        },
+        "native_id": "402-43",
+        "native_split": "",
+        "task_id": "402-43"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/267-18"
+        },
+        "native_id": "267-18",
+        "native_split": "",
+        "task_id": "267-18"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/37378"
+        },
+        "native_id": "37378",
+        "native_split": "",
+        "task_id": "37378"
+      },
+      {
+        "extra": {
+          "instruction_type": "Cell-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/53647"
+        },
+        "native_id": "53647",
+        "native_split": "",
+        "task_id": "53647"
+      },
+      {
+        "extra": {
+          "instruction_type": "Sheet-Level Manipulation",
+          "skillopt_split": "val",
+          "spreadsheet_path": "spreadsheet/142-12"
+        },
+        "native_id": "142-12",
+        "native_split": "",
+        "task_id": "142-12"
+      }
+    ]
+  },
+  "version": "1"
+}

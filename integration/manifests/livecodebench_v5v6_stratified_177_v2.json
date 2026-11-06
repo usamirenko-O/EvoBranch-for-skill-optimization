@@ -1,0 +1,2034 @@
+{
+  "benchmark": "livecodebench",
+  "content_hash": "432cbd5aa90569165d96abc5e06d8d789c0acb7d27ba73665abc27080d61ab99",
+  "counts": {
+    "deployment": 107,
+    "train": 35,
+    "val": 35
+  },
+  "manifest_id": "livecodebench_v5v6_stratified_177_v2",
+  "notes": [
+    "Population = release v5 + v6 problems present locally (test5.jsonl, test6.jsonl).",
+    "Each role keeps the population's easy/medium/hard proportion (largest-remainder rounding).",
+    "Task text is SkillGen's LiveCodeBench prompt wording; the solver returns one Python solution."
+  ],
+  "role_map": {
+    "deployment": "seeded stratified sample (107)",
+    "native_splits": "none -- LiveCodeBench publishes release increments, not train/test",
+    "train": "seeded stratified sample (35)",
+    "val": "seeded stratified sample (35)"
+  },
+  "sampling": {
+    "method": "seeded_stratified_by_difficulty_largest_remainder",
+    "population": 342,
+    "population_by_difficulty": {
+      "easy": 84,
+      "hard": 154,
+      "medium": 104
+    },
+    "quota_by_role": {
+      "deployment": {
+        "easy": 26,
+        "hard": 48,
+        "medium": 33
+      },
+      "train": {
+        "easy": 8,
+        "hard": 16,
+        "medium": 11
+      },
+      "val": {
+        "easy": 8,
+        "hard": 16,
+        "medium": 11
+      }
+    },
+    "seed": 42,
+    "sizes": {
+      "deployment": 107,
+      "train": 35,
+      "val": 35
+    }
+  },
+  "source": {
+    "inputs": [
+      {
+        "path": "benchmarks/livecodebench/test5.jsonl",
+        "present": true,
+        "sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
+      },
+      {
+        "path": "benchmarks/livecodebench/test6.jsonl",
+        "present": true,
+        "sha256": "bb4c364f71921c4495a6ad15abe1a927350b720009f4933e2e71f8af0f6fd1f5"
+      }
+    ],
+    "materialized_from": "benchmarks/livecodebench",
+    "official_scorer": {
+      "note": "pass@1: a problem counts only if every public and private test passes",
+      "ref": "skillopt.envs.livecodebench.evaluator:evaluate",
+      "upstream": "LiveCodeBench lcb_runner/evaluation/testing_util.py, vendored via SkillGen/benchmarks/livecodebench_adapter.py into SkillOpt/skillopt/envs/livecodebench/lcb_grader.py"
+    },
+    "upstream_dataset": "livecodebench/code_generation_lite",
+    "upstream_files": [
+      "test5.jsonl",
+      "test6.jsonl"
+    ]
+  },
+  "splits": {
+    "deployment": [
+      {
+        "extra": {
+          "contest_date": "2024-10-12T07:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3487",
+        "native_split": "",
+        "task_id": "3487"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-04T18:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3562",
+        "native_split": "",
+        "task_id": "3562"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T07:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3587",
+        "native_split": "",
+        "task_id": "3587"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-23T06:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3591",
+        "native_split": "",
+        "task_id": "3591"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T19:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3593",
+        "native_split": "",
+        "task_id": "3593"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-12T07:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3605",
+        "native_split": "",
+        "task_id": "3605"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T19:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3608",
+        "native_split": "",
+        "task_id": "3608"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-14T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3613",
+        "native_split": "",
+        "task_id": "3613"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-07T06:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3621",
+        "native_split": "",
+        "task_id": "3621"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-23T06:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3625",
+        "native_split": "",
+        "task_id": "3625"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T19:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3629",
+        "native_split": "",
+        "task_id": "3629"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-02T19:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3636",
+        "native_split": "",
+        "task_id": "3636"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-14T18:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3638",
+        "native_split": "",
+        "task_id": "3638"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-23T18:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3644",
+        "native_split": "",
+        "task_id": "3644"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-23T06:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3648",
+        "native_split": "",
+        "task_id": "3648"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-16T18:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3658",
+        "native_split": "",
+        "task_id": "3658"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-23T18:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3675",
+        "native_split": "",
+        "task_id": "3675"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-30T18:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3676",
+        "native_split": "",
+        "task_id": "3676"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-11T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3677",
+        "native_split": "",
+        "task_id": "3677"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-28T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3683",
+        "native_split": "",
+        "task_id": "3683"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-21T18:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3690",
+        "native_split": "",
+        "task_id": "3690"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-04T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3715",
+        "native_split": "",
+        "task_id": "3715"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-01T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3722",
+        "native_split": "",
+        "task_id": "3722"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T18:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3731",
+        "native_split": "",
+        "task_id": "3731"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3737",
+        "native_split": "",
+        "task_id": "3737"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-22T19:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3744",
+        "native_split": "",
+        "task_id": "3744"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T19:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3750",
+        "native_split": "",
+        "task_id": "3750"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3751",
+        "native_split": "",
+        "task_id": "3751"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-08T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3759",
+        "native_split": "",
+        "task_id": "3759"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-15T06:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3763",
+        "native_split": "",
+        "task_id": "3763"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-22T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3764",
+        "native_split": "",
+        "task_id": "3764"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-22T18:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3768",
+        "native_split": "",
+        "task_id": "3768"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-04-05T19:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3773",
+        "native_split": "",
+        "task_id": "3773"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-01T06:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3776",
+        "native_split": "",
+        "task_id": "3776"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-01T06:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3778",
+        "native_split": "",
+        "task_id": "3778"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-01T06:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3785",
+        "native_split": "",
+        "task_id": "3785"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-01T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3786",
+        "native_split": "",
+        "task_id": "3786"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-08T18:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3789",
+        "native_split": "",
+        "task_id": "3789"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T19:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3795",
+        "native_split": "",
+        "task_id": "3795"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T07:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3799",
+        "native_split": "",
+        "task_id": "3799"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-22T19:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3809",
+        "native_split": "",
+        "task_id": "3809"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-29T07:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3811",
+        "native_split": "",
+        "task_id": "3811"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-22T19:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3817",
+        "native_split": "",
+        "task_id": "3817"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-05T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc374_e",
+        "native_split": "",
+        "task_id": "abc374_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-05T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc374_g",
+        "native_split": "",
+        "task_id": "abc374_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-12T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc375_d",
+        "native_split": "",
+        "task_id": "abc375_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-12T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc375_e",
+        "native_split": "",
+        "task_id": "abc375_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-19T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc376_b",
+        "native_split": "",
+        "task_id": "abc376_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-19T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc376_f",
+        "native_split": "",
+        "task_id": "abc376_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc377_c",
+        "native_split": "",
+        "task_id": "abc377_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc377_g",
+        "native_split": "",
+        "task_id": "abc377_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-02T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc378_a",
+        "native_split": "",
+        "task_id": "abc378_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-02T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc378_d",
+        "native_split": "",
+        "task_id": "abc378_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-02T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc378_e",
+        "native_split": "",
+        "task_id": "abc378_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-09T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc379_g",
+        "native_split": "",
+        "task_id": "abc379_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-16T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc380_f",
+        "native_split": "",
+        "task_id": "abc380_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-16T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc380_g",
+        "native_split": "",
+        "task_id": "abc380_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-22T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc381_c",
+        "native_split": "",
+        "task_id": "abc381_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-07T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc383_a",
+        "native_split": "",
+        "task_id": "abc383_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-07T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc383_c",
+        "native_split": "",
+        "task_id": "abc383_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-07T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc383_d",
+        "native_split": "",
+        "task_id": "abc383_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-07T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc383_e",
+        "native_split": "",
+        "task_id": "abc383_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-14T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc384_d",
+        "native_split": "",
+        "task_id": "abc384_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-21T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc385_e",
+        "native_split": "",
+        "task_id": "abc385_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-28T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc386_d",
+        "native_split": "",
+        "task_id": "abc386_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-28T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc386_e",
+        "native_split": "",
+        "task_id": "abc386_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-28T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc386_f",
+        "native_split": "",
+        "task_id": "abc386_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-04T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc387_a",
+        "native_split": "",
+        "task_id": "abc387_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-04T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc387_b",
+        "native_split": "",
+        "task_id": "abc387_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-11T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc388_a",
+        "native_split": "",
+        "task_id": "abc388_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc389_b",
+        "native_split": "",
+        "task_id": "abc389_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc389_e",
+        "native_split": "",
+        "task_id": "abc389_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc390_a",
+        "native_split": "",
+        "task_id": "abc390_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc390_b",
+        "native_split": "",
+        "task_id": "abc390_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc390_c",
+        "native_split": "",
+        "task_id": "abc390_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc390_f",
+        "native_split": "",
+        "task_id": "abc390_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-01T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc391_b",
+        "native_split": "",
+        "task_id": "abc391_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-08T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc392_d",
+        "native_split": "",
+        "task_id": "abc392_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-08T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc392_g",
+        "native_split": "",
+        "task_id": "abc392_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-15T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc393_a",
+        "native_split": "",
+        "task_id": "abc393_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-15T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc393_e",
+        "native_split": "",
+        "task_id": "abc393_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-01T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc395_c",
+        "native_split": "",
+        "task_id": "abc395_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-08T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc396_a",
+        "native_split": "",
+        "task_id": "abc396_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-08T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc396_f",
+        "native_split": "",
+        "task_id": "abc396_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-08T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc396_g",
+        "native_split": "",
+        "task_id": "abc396_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc397_a",
+        "native_split": "",
+        "task_id": "abc397_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc397_c",
+        "native_split": "",
+        "task_id": "abc397_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc397_d",
+        "native_split": "",
+        "task_id": "abc397_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc397_g",
+        "native_split": "",
+        "task_id": "abc397_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-22T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc398_d",
+        "native_split": "",
+        "task_id": "abc398_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-29T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc399_e",
+        "native_split": "",
+        "task_id": "abc399_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-29T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc399_f",
+        "native_split": "",
+        "task_id": "abc399_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-04-05T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc400_b",
+        "native_split": "",
+        "task_id": "abc400_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-09-22T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc184_e",
+        "native_split": "",
+        "task_id": "arc184_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-27T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc186_e",
+        "native_split": "",
+        "task_id": "arc186_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-23T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc188_b",
+        "native_split": "",
+        "task_id": "arc188_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-08T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc189_b",
+        "native_split": "",
+        "task_id": "arc189_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-08T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc189_c",
+        "native_split": "",
+        "task_id": "arc189_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-08T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc189_d",
+        "native_split": "",
+        "task_id": "arc189_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-09T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc192_b",
+        "native_split": "",
+        "task_id": "arc192_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-23T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc193_b",
+        "native_split": "",
+        "task_id": "arc193_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-23T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc193_d",
+        "native_split": "",
+        "task_id": "arc193_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-09T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc194_c",
+        "native_split": "",
+        "task_id": "arc194_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-23T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc195_a",
+        "native_split": "",
+        "task_id": "arc195_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-23T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc195_b",
+        "native_split": "",
+        "task_id": "arc195_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-23T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc195_c",
+        "native_split": "",
+        "task_id": "arc195_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-04-06T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc196_c",
+        "native_split": "",
+        "task_id": "arc196_c"
+      }
+    ],
+    "train": [
+      {
+        "extra": {
+          "contest_date": "2024-10-19T19:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3566",
+        "native_split": "",
+        "task_id": "3566"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-12T19:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3588",
+        "native_split": "",
+        "task_id": "3588"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-09T06:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3622",
+        "native_split": "",
+        "task_id": "3622"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-07T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3653",
+        "native_split": "",
+        "task_id": "3653"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-21T06:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3657",
+        "native_split": "",
+        "task_id": "3657"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-14T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3686",
+        "native_split": "",
+        "task_id": "3686"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T06:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3687",
+        "native_split": "",
+        "task_id": "3687"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-15T06:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3692",
+        "native_split": "",
+        "task_id": "3692"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-04T06:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3716",
+        "native_split": "",
+        "task_id": "3716"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T06:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3739",
+        "native_split": "",
+        "task_id": "3739"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-15T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3779",
+        "native_split": "",
+        "task_id": "3779"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-29T19:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3832",
+        "native_split": "",
+        "task_id": "3832"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-05T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc374_a",
+        "native_split": "",
+        "task_id": "abc374_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-05T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc374_b",
+        "native_split": "",
+        "task_id": "abc374_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-05T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc374_f",
+        "native_split": "",
+        "task_id": "abc374_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-19T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc376_a",
+        "native_split": "",
+        "task_id": "abc376_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-09T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc379_f",
+        "native_split": "",
+        "task_id": "abc379_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-22T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc381_a",
+        "native_split": "",
+        "task_id": "abc381_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-14T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc384_b",
+        "native_split": "",
+        "task_id": "abc384_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-14T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc384_f",
+        "native_split": "",
+        "task_id": "abc384_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc389_d",
+        "native_split": "",
+        "task_id": "abc389_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc390_g",
+        "native_split": "",
+        "task_id": "abc390_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-08T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc392_f",
+        "native_split": "",
+        "task_id": "abc392_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-22T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc394_b",
+        "native_split": "",
+        "task_id": "abc394_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-22T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc394_e",
+        "native_split": "",
+        "task_id": "abc394_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-08T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc396_b",
+        "native_split": "",
+        "task_id": "abc396_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-08T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc396_d",
+        "native_split": "",
+        "task_id": "abc396_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc397_b",
+        "native_split": "",
+        "task_id": "abc397_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc397_f",
+        "native_split": "",
+        "task_id": "abc397_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-13T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc185_d",
+        "native_split": "",
+        "task_id": "arc185_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-27T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc186_d",
+        "native_split": "",
+        "task_id": "arc186_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-12T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc190_c",
+        "native_split": "",
+        "task_id": "arc190_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-09T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc194_a",
+        "native_split": "",
+        "task_id": "arc194_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-23T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc195_e",
+        "native_split": "",
+        "task_id": "arc195_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-04-06T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc196_a",
+        "native_split": "",
+        "task_id": "arc196_a"
+      }
+    ],
+    "val": [
+      {
+        "extra": {
+          "contest_date": "2024-10-19T19:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3607",
+        "native_split": "",
+        "task_id": "3607"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-09T18:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3612",
+        "native_split": "",
+        "task_id": "3612"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-21T18:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3656",
+        "native_split": "",
+        "task_id": "3656"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-21T06:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3685",
+        "native_split": "",
+        "task_id": "3685"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-28T18:30:00",
+          "difficulty": "medium",
+          "platform": "leetcode",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "3699",
+        "native_split": "",
+        "task_id": "3699"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-15T18:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3709",
+        "native_split": "",
+        "task_id": "3709"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-29T19:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3717",
+        "native_split": "",
+        "task_id": "3717"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-01T06:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3736",
+        "native_split": "",
+        "task_id": "3736"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-18T06:30:00",
+          "difficulty": "easy",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3747",
+        "native_split": "",
+        "task_id": "3747"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-29T07:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3765",
+        "native_split": "",
+        "task_id": "3765"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-15T19:30:00",
+          "difficulty": "hard",
+          "platform": "leetcode",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "3801",
+        "native_split": "",
+        "task_id": "3801"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-05T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc374_c",
+        "native_split": "",
+        "task_id": "abc374_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-05T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc374_d",
+        "native_split": "",
+        "task_id": "abc374_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc377_d",
+        "native_split": "",
+        "task_id": "abc377_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-26T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc377_e",
+        "native_split": "",
+        "task_id": "abc377_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-02T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc378_c",
+        "native_split": "",
+        "task_id": "abc378_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-02T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc378_f",
+        "native_split": "",
+        "task_id": "abc378_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-11-16T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc380_d",
+        "native_split": "",
+        "task_id": "abc380_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-28T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc386_a",
+        "native_split": "",
+        "task_id": "abc386_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-12-28T00:00:00",
+          "difficulty": "easy",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "abc386_b",
+        "native_split": "",
+        "task_id": "abc386_b"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc390_d",
+        "native_split": "",
+        "task_id": "abc390_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-25T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc390_e",
+        "native_split": "",
+        "task_id": "abc390_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-01T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc391_d",
+        "native_split": "",
+        "task_id": "abc391_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-01T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc391_f",
+        "native_split": "",
+        "task_id": "abc391_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-01T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc391_g",
+        "native_split": "",
+        "task_id": "abc391_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-22T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc394_f",
+        "native_split": "",
+        "task_id": "abc394_f"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-01T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc395_e",
+        "native_split": "",
+        "task_id": "abc395_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-04-05T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc400_d",
+        "native_split": "",
+        "task_id": "abc400_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-04-05T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "abc400_g",
+        "native_split": "",
+        "task_id": "abc400_g"
+      },
+      {
+        "extra": {
+          "contest_date": "2024-10-13T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test5.jsonl"
+        },
+        "native_id": "arc185_c",
+        "native_split": "",
+        "task_id": "arc185_c"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-01-26T00:00:00",
+          "difficulty": "medium",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc191_a",
+        "native_split": "",
+        "task_id": "arc191_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-09T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc192_d",
+        "native_split": "",
+        "task_id": "arc192_d"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-09T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc192_e",
+        "native_split": "",
+        "task_id": "arc192_e"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-02-23T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc193_a",
+        "native_split": "",
+        "task_id": "arc193_a"
+      },
+      {
+        "extra": {
+          "contest_date": "2025-03-09T00:00:00",
+          "difficulty": "hard",
+          "platform": "atcoder",
+          "release_file": "test6.jsonl"
+        },
+        "native_id": "arc194_b",
+        "native_split": "",
+        "task_id": "arc194_b"
+      }
+    ]
+  },
+  "version": "1"
+}

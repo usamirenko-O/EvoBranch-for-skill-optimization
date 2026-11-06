@@ -1,0 +1,21 @@
+{
+  "rounds": 4,
+  "beam_m": 3,
+  "k_subsets": 3,
+  "partitioner": "history_aware_kmeans",
+  "partitioner_options": {
+    "seed": 42
+  },
+  "operator": "branch_balanced_passthrough",
+  "operator_options": {
+    "max_candidates": 3
+  },
+  "tie_break": "skill_text_hash",
+  "deployment_rule": "beam_top1_no_merge",
+  "tracker": "llm_issue_tracker",
+  "tracker_options": {
+    "char_budget": 60000,
+    "retries": 1
+  },
+  "attempt_aware_proposal": true
+}

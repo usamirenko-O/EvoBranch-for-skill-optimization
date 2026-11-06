@@ -1,0 +1,83 @@
+# Model aliases for optimizer, solver, and local embedding endpoints.
+
+model_list:
+
+  # Shared optimizer model with thinking disabled.
+  - model_name: optimizer-llm
+    litellm_params:
+      model: openai/deepseek-flash
+      api_base: https://api.deepseek.com/v1
+      api_key: os.environ/DEEPSEEK_API_KEY
+      extra_body:
+        thinking:
+          type: disabled
+
+  - model_name: solver-gpt-6-astra
+    litellm_params:
+      model: openai/gpt-6-astra
+      api_base: http://127.0.0.1:8317/v1
+      api_key: os.environ/CPA_API_KEY
+
+  - model_name: solver-gpt-5-6-terra
+    litellm_params:
+      model: openai/gpt-5.6-terra
+      api_base: http://127.0.0.1:8317/v1
+      api_key: os.environ/CPA_API_KEY
+
+  - model_name: solver-gpt-5-6-sol
+    litellm_params:
+      model: openai/gpt-5.6-sol
+      api_base: http://127.0.0.1:8317/v1
+      api_key: os.environ/CPA_API_KEY
+
+  - model_name: solver-gpt-5-6-luna
+    litellm_params:
+      model: openai/gpt-5.6-luna
+      api_base: http://127.0.0.1:8317/v1
+      api_key: os.environ/CPA_API_KEY
+
+  - model_name: solver-deepseek-flash
+    litellm_params:
+      model: openai/deepseek-flash
+      api_base: https://api.deepseek.com/v1
+      api_key: os.environ/DEEPSEEK_API_KEY
+      extra_body:
+        thinking:
+          type: disabled
+
+  - model_name: solver-qwen3-5-4b
+    litellm_params:
+      model: openai/qwen3.5-4b
+      api_base: http://127.0.0.1:8001/v1
+      api_key: local
+
+  - model_name: solver-qwen3-5-4b
+    litellm_params:
+      model: openai/qwen3.5-4b
+      api_base: http://127.0.0.1:8002/v1
+      api_key: local
+
+  - model_name: solver-qwen3-5-4b
+    litellm_params:
+      model: openai/qwen3.5-4b
+      api_base: http://127.0.0.1:8003/v1
+      api_key: local
+      
+  - model_name: solver-gpt-5-5
+    litellm_params:
+      model: openai/gpt-5.5
+      api_base: http://127.0.0.1:8317/v1
+      api_key: os.environ/CPA_API_KEY
+
+  # ---- Embeddings (local) -------------------------------------------------
+  - model_name: optimizer-embeddings
+    litellm_params:
+      model: openai/local-bge-small-en-v1.5
+      api_base: http://127.0.0.1:8318/v1
+      api_key: local
+
+litellm_settings:
+  # The proxy's model ids are not in LiteLLM's public price table; drop any
+  # parameter a backend rejects rather than failing the call.
+  drop_params: true
+  num_retries: 3

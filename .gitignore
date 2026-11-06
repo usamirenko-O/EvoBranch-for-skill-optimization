@@ -1,0 +1,51 @@
+# Local credentials and tool state.
+.git/
+.agents/
+.aws/
+.claude/
+.codex/
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environments and caches.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+
+# Runtime output and release archives.
+*.log
+*.bak
+*.tmp
+/dist/
+/release/
+/results/
+/queue_logs/
+/_archive_exp_runs/
+/candidates/
+/integration/runs*/
+outputs/
+mini_train_output/
+smoke_test_output/
+/SkillGen/skill_output/
+/SkillGen/data/
+/integration/*_livemath/generated_dataset/
+/integration/*_livemath/generated_split/
+/integration/*_livemath/mini_split/
+/integration/manifests/_superseded/
+
+# Raw corpora are prepared separately; task-ID manifests remain in source.
+/benchmarks/*
+!/benchmarks/README.md
+!/benchmarks/assets.json

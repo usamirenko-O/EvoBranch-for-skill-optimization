@@ -1,0 +1,1475 @@
+{
+  "benchmark": "pubmedqa",
+  "content_hash": "1128f2ad0a9f067c8a5be48aebe9d97046c0218de31d7a5d9629184488045ee4",
+  "counts": {
+    "deployment": 107,
+    "train": 35,
+    "val": 35
+  },
+  "manifest_id": "pubmedqa_pqal_uniform_177_v2",
+  "notes": [
+    "Reasoning-required setting: the solver sees the question and the abstract sections, never the conclusion.",
+    "Ground truth is the official final_decision; scoring is exact match after yes/no/maybe extraction."
+  ],
+  "role_map": {
+    "deployment": "seeded uniform sample (107)",
+    "native_splits": "not used -- PQA-L's official 500-question test list is not present locally; the population is all 1000 labelled questions",
+    "train": "seeded uniform sample (35)",
+    "val": "seeded uniform sample (35)"
+  },
+  "sampling": {
+    "method": "seeded_uniform_sample_from_population",
+    "population": 1000,
+    "population_by_label": {
+      "maybe": 110,
+      "no": 338,
+      "yes": 552
+    },
+    "seed": 42,
+    "sizes": {
+      "deployment": 107,
+      "train": 35,
+      "val": 35
+    }
+  },
+  "source": {
+    "inputs": [
+      {
+        "path": "benchmarks/pubmedqa/ori_pqal.json",
+        "present": true,
+        "sha256": "8b3276be8942ebbd77f3ddcda12c1749bf0e490045a736fd8438ee40cf37a41d"
+      }
+    ],
+    "materialized_from": "benchmarks/pubmedqa/ori_pqal.json",
+    "official_scorer": {
+      "ref": "skillopt.envs.pubmedqa.evaluator:evaluate",
+      "upstream": "PubMedQA accuracy: exact match on final_decision in {yes, no, maybe}; extraction rules copied from SkillGen/benchmarks/pubmedqa_grader.py"
+    },
+    "upstream_dataset": "PubMedQA PQA-L (pubmedqa/pqa_labeled, ori_pqal.json)"
+  },
+  "splits": {
+    "deployment": [
+      {
+        "extra": {
+          "year": "2001"
+        },
+        "native_id": "11334578",
+        "native_split": "",
+        "task_id": "11334578"
+      },
+      {
+        "extra": {
+          "year": "2001"
+        },
+        "native_id": "11380492",
+        "native_split": "",
+        "task_id": "11380492"
+      },
+      {
+        "extra": {
+          "year": "2001"
+        },
+        "native_id": "11555508",
+        "native_split": "",
+        "task_id": "11555508"
+      },
+      {
+        "extra": {
+          "year": "2001"
+        },
+        "native_id": "11776681",
+        "native_split": "",
+        "task_id": "11776681"
+      },
+      {
+        "extra": {
+          "year": "2001"
+        },
+        "native_id": "11833948",
+        "native_split": "",
+        "task_id": "11833948"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "11882828",
+        "native_split": "",
+        "task_id": "11882828"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "11926574",
+        "native_split": "",
+        "task_id": "11926574"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "12068831",
+        "native_split": "",
+        "task_id": "12068831"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "12221908",
+        "native_split": "",
+        "task_id": "12221908"
+      },
+      {
+        "extra": {
+          "year": "2003"
+        },
+        "native_id": "12607666",
+        "native_split": "",
+        "task_id": "12607666"
+      },
+      {
+        "extra": {
+          "year": "2003"
+        },
+        "native_id": "12790890",
+        "native_split": "",
+        "task_id": "12790890"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15000338",
+        "native_split": "",
+        "task_id": "15000338"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15065192",
+        "native_split": "",
+        "task_id": "15065192"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15223779",
+        "native_split": "",
+        "task_id": "15223779"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15489384",
+        "native_split": "",
+        "task_id": "15489384"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15502995",
+        "native_split": "",
+        "task_id": "15502995"
+      },
+      {
+        "extra": {
+          "year": "2005"
+        },
+        "native_id": "15687156",
+        "native_split": "",
+        "task_id": "15687156"
+      },
+      {
+        "extra": {
+          "year": "2005"
+        },
+        "native_id": "16155169",
+        "native_split": "",
+        "task_id": "16155169"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16510651",
+        "native_split": "",
+        "task_id": "16510651"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16564683",
+        "native_split": "",
+        "task_id": "16564683"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16647887",
+        "native_split": "",
+        "task_id": "16647887"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16778275",
+        "native_split": "",
+        "task_id": "16778275"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16968876",
+        "native_split": "",
+        "task_id": "16968876"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16971978",
+        "native_split": "",
+        "task_id": "16971978"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17224424",
+        "native_split": "",
+        "task_id": "17224424"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17444776",
+        "native_split": "",
+        "task_id": "17444776"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17453263",
+        "native_split": "",
+        "task_id": "17453263"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17483607",
+        "native_split": "",
+        "task_id": "17483607"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17489316",
+        "native_split": "",
+        "task_id": "17489316"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17551944",
+        "native_split": "",
+        "task_id": "17551944"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17916877",
+        "native_split": "",
+        "task_id": "17916877"
+      },
+      {
+        "extra": {
+          "year": "2008"
+        },
+        "native_id": "18375490",
+        "native_split": "",
+        "task_id": "18375490"
+      },
+      {
+        "extra": {
+          "year": "2008"
+        },
+        "native_id": "18378554",
+        "native_split": "",
+        "task_id": "18378554"
+      },
+      {
+        "extra": {
+          "year": "2008"
+        },
+        "native_id": "18507507",
+        "native_split": "",
+        "task_id": "18507507"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "18948835",
+        "native_split": "",
+        "task_id": "18948835"
+      },
+      {
+        "extra": {
+          "year": ""
+        },
+        "native_id": "19106867",
+        "native_split": "",
+        "task_id": "19106867"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19131405",
+        "native_split": "",
+        "task_id": "19131405"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19230985",
+        "native_split": "",
+        "task_id": "19230985"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19394934",
+        "native_split": "",
+        "task_id": "19394934"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19401574",
+        "native_split": "",
+        "task_id": "19401574"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19430778",
+        "native_split": "",
+        "task_id": "19430778"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19575307",
+        "native_split": "",
+        "task_id": "19575307"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19608436",
+        "native_split": "",
+        "task_id": "19608436"
+      },
+      {
+        "extra": {
+          "year": "2010"
+        },
+        "native_id": "19640728",
+        "native_split": "",
+        "task_id": "19640728"
+      },
+      {
+        "extra": {
+          "year": "2010"
+        },
+        "native_id": "20197761",
+        "native_split": "",
+        "task_id": "20197761"
+      },
+      {
+        "extra": {
+          "year": "2010"
+        },
+        "native_id": "20629769",
+        "native_split": "",
+        "task_id": "20629769"
+      },
+      {
+        "extra": {
+          "year": "2011"
+        },
+        "native_id": "20813740",
+        "native_split": "",
+        "task_id": "20813740"
+      },
+      {
+        "extra": {
+          "year": "2010"
+        },
+        "native_id": "20871246",
+        "native_split": "",
+        "task_id": "20871246"
+      },
+      {
+        "extra": {
+          "year": "2011"
+        },
+        "native_id": "21164063",
+        "native_split": "",
+        "task_id": "21164063"
+      },
+      {
+        "extra": {
+          "year": "2011"
+        },
+        "native_id": "21592383",
+        "native_split": "",
+        "task_id": "21592383"
+      },
+      {
+        "extra": {
+          "year": "2011"
+        },
+        "native_id": "21689015",
+        "native_split": "",
+        "task_id": "21689015"
+      },
+      {
+        "extra": {
+          "year": "2011"
+        },
+        "native_id": "21848798",
+        "native_split": "",
+        "task_id": "21848798"
+      },
+      {
+        "extra": {
+          "year": "2011"
+        },
+        "native_id": "22188074",
+        "native_split": "",
+        "task_id": "22188074"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22236315",
+        "native_split": "",
+        "task_id": "22236315"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22449464",
+        "native_split": "",
+        "task_id": "22449464"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22534881",
+        "native_split": "",
+        "task_id": "22534881"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "22683044",
+        "native_split": "",
+        "task_id": "22683044"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22813804",
+        "native_split": "",
+        "task_id": "22813804"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22825590",
+        "native_split": "",
+        "task_id": "22825590"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "23002947",
+        "native_split": "",
+        "task_id": "23002947"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23228527",
+        "native_split": "",
+        "task_id": "23228527"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23356465",
+        "native_split": "",
+        "task_id": "23356465"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23414523",
+        "native_split": "",
+        "task_id": "23414523"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23422012",
+        "native_split": "",
+        "task_id": "23422012"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23506394",
+        "native_split": "",
+        "task_id": "23506394"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23587089",
+        "native_split": "",
+        "task_id": "23587089"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23601294",
+        "native_split": "",
+        "task_id": "23601294"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23735520",
+        "native_split": "",
+        "task_id": "23735520"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23810330",
+        "native_split": "",
+        "task_id": "23810330"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23916653",
+        "native_split": "",
+        "task_id": "23916653"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "24073931",
+        "native_split": "",
+        "task_id": "24073931"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "24235894",
+        "native_split": "",
+        "task_id": "24235894"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "24267613",
+        "native_split": "",
+        "task_id": "24267613"
+      },
+      {
+        "extra": {
+          "year": ""
+        },
+        "native_id": "24298614",
+        "native_split": "",
+        "task_id": "24298614"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "24336869",
+        "native_split": "",
+        "task_id": "24336869"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24577079",
+        "native_split": "",
+        "task_id": "24577079"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24695920",
+        "native_split": "",
+        "task_id": "24695920"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24827404",
+        "native_split": "",
+        "task_id": "24827404"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25034219",
+        "native_split": "",
+        "task_id": "25034219"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25070942",
+        "native_split": "",
+        "task_id": "25070942"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "25228241",
+        "native_split": "",
+        "task_id": "25228241"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25432938",
+        "native_split": "",
+        "task_id": "25432938"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25481573",
+        "native_split": "",
+        "task_id": "25481573"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25489696",
+        "native_split": "",
+        "task_id": "25489696"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25747932",
+        "native_split": "",
+        "task_id": "25747932"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "25940336",
+        "native_split": "",
+        "task_id": "25940336"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "26163474",
+        "native_split": "",
+        "task_id": "26163474"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26370095",
+        "native_split": "",
+        "task_id": "26370095"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26471488",
+        "native_split": "",
+        "task_id": "26471488"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26686513",
+        "native_split": "",
+        "task_id": "26686513"
+      },
+      {
+        "extra": {
+          "year": ""
+        },
+        "native_id": "26818046",
+        "native_split": "",
+        "task_id": "26818046"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26820719",
+        "native_split": "",
+        "task_id": "26820719"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26879871",
+        "native_split": "",
+        "task_id": "26879871"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "27288618",
+        "native_split": "",
+        "task_id": "27288618"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "27338535",
+        "native_split": "",
+        "task_id": "27338535"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "27884344",
+        "native_split": "",
+        "task_id": "27884344"
+      },
+      {
+        "extra": {
+          "year": ""
+        },
+        "native_id": "7547656",
+        "native_split": "",
+        "task_id": "7547656"
+      },
+      {
+        "extra": {
+          "year": "1994"
+        },
+        "native_id": "8200238",
+        "native_split": "",
+        "task_id": "8200238"
+      },
+      {
+        "extra": {
+          "year": "1993"
+        },
+        "native_id": "8262881",
+        "native_split": "",
+        "task_id": "8262881"
+      },
+      {
+        "extra": {
+          "year": "1993"
+        },
+        "native_id": "8422202",
+        "native_split": "",
+        "task_id": "8422202"
+      },
+      {
+        "extra": {
+          "year": "1996"
+        },
+        "native_id": "8910148",
+        "native_split": "",
+        "task_id": "8910148"
+      },
+      {
+        "extra": {
+          "year": "1997"
+        },
+        "native_id": "9107172",
+        "native_split": "",
+        "task_id": "9107172"
+      },
+      {
+        "extra": {
+          "year": "1997"
+        },
+        "native_id": "9199905",
+        "native_split": "",
+        "task_id": "9199905"
+      },
+      {
+        "extra": {
+          "year": "1997"
+        },
+        "native_id": "9363529",
+        "native_split": "",
+        "task_id": "9363529"
+      },
+      {
+        "extra": {
+          "year": "1997"
+        },
+        "native_id": "9446993",
+        "native_split": "",
+        "task_id": "9446993"
+      },
+      {
+        "extra": {
+          "year": "1998"
+        },
+        "native_id": "9616411",
+        "native_split": "",
+        "task_id": "9616411"
+      },
+      {
+        "extra": {
+          "year": "1998"
+        },
+        "native_id": "9722752",
+        "native_split": "",
+        "task_id": "9722752"
+      }
+    ],
+    "train": [
+      {
+        "extra": {
+          "year": "2000"
+        },
+        "native_id": "10781708",
+        "native_split": "",
+        "task_id": "10781708"
+      },
+      {
+        "extra": {
+          "year": "2000"
+        },
+        "native_id": "10798511",
+        "native_split": "",
+        "task_id": "10798511"
+      },
+      {
+        "extra": {
+          "year": "2000"
+        },
+        "native_id": "10834864",
+        "native_split": "",
+        "task_id": "10834864"
+      },
+      {
+        "extra": {
+          "year": "2000"
+        },
+        "native_id": "10922093",
+        "native_split": "",
+        "task_id": "10922093"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "12145243",
+        "native_split": "",
+        "task_id": "12145243"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "12377809",
+        "native_split": "",
+        "task_id": "12377809"
+      },
+      {
+        "extra": {
+          "year": "2003"
+        },
+        "native_id": "12612531",
+        "native_split": "",
+        "task_id": "12612531"
+      },
+      {
+        "extra": {
+          "year": "2003"
+        },
+        "native_id": "12836106",
+        "native_split": "",
+        "task_id": "12836106"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15041506",
+        "native_split": "",
+        "task_id": "15041506"
+      },
+      {
+        "extra": {
+          "year": "1998"
+        },
+        "native_id": "16296668",
+        "native_split": "",
+        "task_id": "16296668"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16776337",
+        "native_split": "",
+        "task_id": "16776337"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16809243",
+        "native_split": "",
+        "task_id": "16809243"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16872243",
+        "native_split": "",
+        "task_id": "16872243"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "17051586",
+        "native_split": "",
+        "task_id": "17051586"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17208539",
+        "native_split": "",
+        "task_id": "17208539"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17593459",
+        "native_split": "",
+        "task_id": "17593459"
+      },
+      {
+        "extra": {
+          "year": "2010"
+        },
+        "native_id": "20064872",
+        "native_split": "",
+        "task_id": "20064872"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "20084845",
+        "native_split": "",
+        "task_id": "20084845"
+      },
+      {
+        "extra": {
+          "year": "2010"
+        },
+        "native_id": "20594006",
+        "native_split": "",
+        "task_id": "20594006"
+      },
+      {
+        "extra": {
+          "year": ""
+        },
+        "native_id": "21789019",
+        "native_split": "",
+        "task_id": "21789019"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22302761",
+        "native_split": "",
+        "task_id": "22302761"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22504515",
+        "native_split": "",
+        "task_id": "22504515"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22902073",
+        "native_split": "",
+        "task_id": "22902073"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22954812",
+        "native_split": "",
+        "task_id": "22954812"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23088164",
+        "native_split": "",
+        "task_id": "23088164"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23571528",
+        "native_split": "",
+        "task_id": "23571528"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "23761381",
+        "native_split": "",
+        "task_id": "23761381"
+      },
+      {
+        "extra": {
+          "year": "2013"
+        },
+        "native_id": "24160268",
+        "native_split": "",
+        "task_id": "24160268"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24507422",
+        "native_split": "",
+        "task_id": "24507422"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24671913",
+        "native_split": "",
+        "task_id": "24671913"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24958650",
+        "native_split": "",
+        "task_id": "24958650"
+      },
+      {
+        "extra": {
+          "year": ""
+        },
+        "native_id": "24995509",
+        "native_split": "",
+        "task_id": "24995509"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "24996865",
+        "native_split": "",
+        "task_id": "24996865"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "27549226",
+        "native_split": "",
+        "task_id": "27549226"
+      },
+      {
+        "extra": {
+          "year": "1998"
+        },
+        "native_id": "9542484",
+        "native_split": "",
+        "task_id": "9542484"
+      }
+    ],
+    "val": [
+      {
+        "extra": {
+          "year": "1999"
+        },
+        "native_id": "10340286",
+        "native_split": "",
+        "task_id": "10340286"
+      },
+      {
+        "extra": {
+          "year": "2001"
+        },
+        "native_id": "11247896",
+        "native_split": "",
+        "task_id": "11247896"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "12040336",
+        "native_split": "",
+        "task_id": "12040336"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "12238307",
+        "native_split": "",
+        "task_id": "12238307"
+      },
+      {
+        "extra": {
+          "year": "2002"
+        },
+        "native_id": "12442934",
+        "native_split": "",
+        "task_id": "12442934"
+      },
+      {
+        "extra": {
+          "year": "2003"
+        },
+        "native_id": "14612308",
+        "native_split": "",
+        "task_id": "14612308"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15381614",
+        "native_split": "",
+        "task_id": "15381614"
+      },
+      {
+        "extra": {
+          "year": "2004"
+        },
+        "native_id": "15477551",
+        "native_split": "",
+        "task_id": "15477551"
+      },
+      {
+        "extra": {
+          "year": "2006"
+        },
+        "native_id": "16735905",
+        "native_split": "",
+        "task_id": "16735905"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17445978",
+        "native_split": "",
+        "task_id": "17445978"
+      },
+      {
+        "extra": {
+          "year": "2007"
+        },
+        "native_id": "17601244",
+        "native_split": "",
+        "task_id": "17601244"
+      },
+      {
+        "extra": {
+          "year": "2008"
+        },
+        "native_id": "18005142",
+        "native_split": "",
+        "task_id": "18005142"
+      },
+      {
+        "extra": {
+          "year": "2008"
+        },
+        "native_id": "18616781",
+        "native_split": "",
+        "task_id": "18616781"
+      },
+      {
+        "extra": {
+          "year": "2008"
+        },
+        "native_id": "18693227",
+        "native_split": "",
+        "task_id": "18693227"
+      },
+      {
+        "extra": {
+          "year": "2008"
+        },
+        "native_id": "18783922",
+        "native_split": "",
+        "task_id": "18783922"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19058191",
+        "native_split": "",
+        "task_id": "19058191"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19351635",
+        "native_split": "",
+        "task_id": "19351635"
+      },
+      {
+        "extra": {
+          "year": "2009"
+        },
+        "native_id": "19398929",
+        "native_split": "",
+        "task_id": "19398929"
+      },
+      {
+        "extra": {
+          "year": "2010"
+        },
+        "native_id": "20828836",
+        "native_split": "",
+        "task_id": "20828836"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22227642",
+        "native_split": "",
+        "task_id": "22227642"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "22382608",
+        "native_split": "",
+        "task_id": "22382608"
+      },
+      {
+        "extra": {
+          "year": "2012"
+        },
+        "native_id": "23147106",
+        "native_split": "",
+        "task_id": "23147106"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24476003",
+        "native_split": "",
+        "task_id": "24476003"
+      },
+      {
+        "extra": {
+          "year": "2014"
+        },
+        "native_id": "24851767",
+        "native_split": "",
+        "task_id": "24851767"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "25277731",
+        "native_split": "",
+        "task_id": "25277731"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25336163",
+        "native_split": "",
+        "task_id": "25336163"
+      },
+      {
+        "extra": {
+          "year": ""
+        },
+        "native_id": "25957366",
+        "native_split": "",
+        "task_id": "25957366"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "25981682",
+        "native_split": "",
+        "task_id": "25981682"
+      },
+      {
+        "extra": {
+          "year": "2015"
+        },
+        "native_id": "25985014",
+        "native_split": "",
+        "task_id": "25985014"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26285789",
+        "native_split": "",
+        "task_id": "26285789"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26518378",
+        "native_split": "",
+        "task_id": "26518378"
+      },
+      {
+        "extra": {
+          "year": "2016"
+        },
+        "native_id": "26965932",
+        "native_split": "",
+        "task_id": "26965932"
+      },
+      {
+        "extra": {
+          "year": "1996"
+        },
+        "native_id": "8916748",
+        "native_split": "",
+        "task_id": "8916748"
+      },
+      {
+        "extra": {
+          "year": "1997"
+        },
+        "native_id": "9465206",
+        "native_split": "",
+        "task_id": "9465206"
+      },
+      {
+        "extra": {
+          "year": "1998"
+        },
+        "native_id": "9602458",
+        "native_split": "",
+        "task_id": "9602458"
+      }
+    ]
+  },
+  "version": "1"
+}

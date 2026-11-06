@@ -1,0 +1,1507 @@
+{
+  "benchmark": "chemllmbench",
+  "content_hash": "3eb54a60ba0d27f7560f77713321c1032d729e90aa25cbefb9a59c203152e3cc",
+  "counts": {
+    "deployment": 107,
+    "train": 35,
+    "val": 35
+  },
+  "manifest_id": "chemllmbench_yield_sample200_stratified_177_v2",
+  "notes": [
+    "Population = BH_sample_100_test + SU_sample_100_test (the SkillGen-paper sample); full BH/Suzuki sets unused.",
+    "Task text is SkillGen's yield-prediction prompt wording; label = Yes iff yield > 30%.",
+    "Label imbalance: 160 No / 40 Yes; a constant 'No' answer scores 0.80.",
+    "Each role keeps the population's (subset, label) proportion (largest-remainder rounding), so train/val/deployment all contain Yes reactions from both BH and SU."
+  ],
+  "role_map": {
+    "deployment": "seeded stratified sample (107)",
+    "native_splits": "none -- the two *_sample_100_test.npz files are ChemLLMBench's evaluation sample",
+    "train": "seeded stratified sample (35)",
+    "val": "seeded stratified sample (35)"
+  },
+  "sampling": {
+    "method": "seeded_stratified_by_subset_label_largest_remainder",
+    "population": 200,
+    "population_by_subset_label": {
+      "BH:No": 80,
+      "BH:Yes": 20,
+      "SU:No": 80,
+      "SU:Yes": 20
+    },
+    "quota_by_role": {
+      "deployment": {
+        "BH:No": 43,
+        "BH:Yes": 11,
+        "SU:No": 43,
+        "SU:Yes": 10
+      },
+      "train": {
+        "BH:No": 14,
+        "BH:Yes": 4,
+        "SU:No": 14,
+        "SU:Yes": 3
+      },
+      "val": {
+        "BH:No": 14,
+        "BH:Yes": 4,
+        "SU:No": 14,
+        "SU:Yes": 3
+      }
+    },
+    "seed": 42,
+    "sizes": {
+      "deployment": 107,
+      "train": 35,
+      "val": 35
+    }
+  },
+  "source": {
+    "inputs": [
+      {
+        "path": "benchmarks/chemllmbench/yield_prediction/BH_sample_100_test.npz",
+        "present": true,
+        "sha256": "d9bfeb8f6bb6806849de5f50e583df6288ff74b24881f83d134de78dfdb59c5a"
+      },
+      {
+        "path": "benchmarks/chemllmbench/yield_prediction/SU_sample_100_test.npz",
+        "present": true,
+        "sha256": "ca925aef97877a9a13d20d6b7e227ae533162bc9897707f7fd011bd5e1083592"
+      }
+    ],
+    "materialized_from": "benchmarks/chemllmbench/yield_prediction",
+    "official_scorer": {
+      "ref": "skillopt.envs.chemllmbench.evaluator:evaluate",
+      "upstream": "ChemLLMBench yield prediction accuracy (high-yield Yes/No exact match); extraction copied from SkillGen/benchmarks/chemllmbench_grader.py"
+    },
+    "upstream_dataset": "ChemFoundationModels/ChemLLMBench yield_prediction (sampled 100-reaction test sets)",
+    "upstream_files": [
+      "BH_sample_100_test.npz",
+      "SU_sample_100_test.npz"
+    ]
+  },
+  "splits": {
+    "deployment": [
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_000",
+        "native_split": "",
+        "task_id": "BH_000"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_001",
+        "native_split": "",
+        "task_id": "BH_001"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_002",
+        "native_split": "",
+        "task_id": "BH_002"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_006",
+        "native_split": "",
+        "task_id": "BH_006"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_008",
+        "native_split": "",
+        "task_id": "BH_008"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_012",
+        "native_split": "",
+        "task_id": "BH_012"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_013",
+        "native_split": "",
+        "task_id": "BH_013"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_014",
+        "native_split": "",
+        "task_id": "BH_014"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_015",
+        "native_split": "",
+        "task_id": "BH_015"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_016",
+        "native_split": "",
+        "task_id": "BH_016"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_018",
+        "native_split": "",
+        "task_id": "BH_018"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_020",
+        "native_split": "",
+        "task_id": "BH_020"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_021",
+        "native_split": "",
+        "task_id": "BH_021"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_023",
+        "native_split": "",
+        "task_id": "BH_023"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_024",
+        "native_split": "",
+        "task_id": "BH_024"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_025",
+        "native_split": "",
+        "task_id": "BH_025"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_027",
+        "native_split": "",
+        "task_id": "BH_027"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_028",
+        "native_split": "",
+        "task_id": "BH_028"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_029",
+        "native_split": "",
+        "task_id": "BH_029"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_031",
+        "native_split": "",
+        "task_id": "BH_031"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_032",
+        "native_split": "",
+        "task_id": "BH_032"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_033",
+        "native_split": "",
+        "task_id": "BH_033"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_034",
+        "native_split": "",
+        "task_id": "BH_034"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_035",
+        "native_split": "",
+        "task_id": "BH_035"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_037",
+        "native_split": "",
+        "task_id": "BH_037"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_038",
+        "native_split": "",
+        "task_id": "BH_038"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_039",
+        "native_split": "",
+        "task_id": "BH_039"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_047",
+        "native_split": "",
+        "task_id": "BH_047"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_048",
+        "native_split": "",
+        "task_id": "BH_048"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_050",
+        "native_split": "",
+        "task_id": "BH_050"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_053",
+        "native_split": "",
+        "task_id": "BH_053"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_054",
+        "native_split": "",
+        "task_id": "BH_054"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_055",
+        "native_split": "",
+        "task_id": "BH_055"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_056",
+        "native_split": "",
+        "task_id": "BH_056"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_058",
+        "native_split": "",
+        "task_id": "BH_058"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_060",
+        "native_split": "",
+        "task_id": "BH_060"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_061",
+        "native_split": "",
+        "task_id": "BH_061"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_065",
+        "native_split": "",
+        "task_id": "BH_065"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_068",
+        "native_split": "",
+        "task_id": "BH_068"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_069",
+        "native_split": "",
+        "task_id": "BH_069"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_072",
+        "native_split": "",
+        "task_id": "BH_072"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_077",
+        "native_split": "",
+        "task_id": "BH_077"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_079",
+        "native_split": "",
+        "task_id": "BH_079"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_080",
+        "native_split": "",
+        "task_id": "BH_080"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_083",
+        "native_split": "",
+        "task_id": "BH_083"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_085",
+        "native_split": "",
+        "task_id": "BH_085"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_086",
+        "native_split": "",
+        "task_id": "BH_086"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_087",
+        "native_split": "",
+        "task_id": "BH_087"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_088",
+        "native_split": "",
+        "task_id": "BH_088"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_089",
+        "native_split": "",
+        "task_id": "BH_089"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_090",
+        "native_split": "",
+        "task_id": "BH_090"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_092",
+        "native_split": "",
+        "task_id": "BH_092"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_095",
+        "native_split": "",
+        "task_id": "BH_095"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_096",
+        "native_split": "",
+        "task_id": "BH_096"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_000",
+        "native_split": "",
+        "task_id": "SU_000"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_001",
+        "native_split": "",
+        "task_id": "SU_001"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_002",
+        "native_split": "",
+        "task_id": "SU_002"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_004",
+        "native_split": "",
+        "task_id": "SU_004"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_005",
+        "native_split": "",
+        "task_id": "SU_005"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_007",
+        "native_split": "",
+        "task_id": "SU_007"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_009",
+        "native_split": "",
+        "task_id": "SU_009"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_010",
+        "native_split": "",
+        "task_id": "SU_010"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_011",
+        "native_split": "",
+        "task_id": "SU_011"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_012",
+        "native_split": "",
+        "task_id": "SU_012"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_013",
+        "native_split": "",
+        "task_id": "SU_013"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_014",
+        "native_split": "",
+        "task_id": "SU_014"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_017",
+        "native_split": "",
+        "task_id": "SU_017"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_020",
+        "native_split": "",
+        "task_id": "SU_020"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_022",
+        "native_split": "",
+        "task_id": "SU_022"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_025",
+        "native_split": "",
+        "task_id": "SU_025"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_027",
+        "native_split": "",
+        "task_id": "SU_027"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_028",
+        "native_split": "",
+        "task_id": "SU_028"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_029",
+        "native_split": "",
+        "task_id": "SU_029"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_030",
+        "native_split": "",
+        "task_id": "SU_030"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_032",
+        "native_split": "",
+        "task_id": "SU_032"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_035",
+        "native_split": "",
+        "task_id": "SU_035"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_036",
+        "native_split": "",
+        "task_id": "SU_036"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_037",
+        "native_split": "",
+        "task_id": "SU_037"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_041",
+        "native_split": "",
+        "task_id": "SU_041"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_042",
+        "native_split": "",
+        "task_id": "SU_042"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_044",
+        "native_split": "",
+        "task_id": "SU_044"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_049",
+        "native_split": "",
+        "task_id": "SU_049"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_051",
+        "native_split": "",
+        "task_id": "SU_051"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_055",
+        "native_split": "",
+        "task_id": "SU_055"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_057",
+        "native_split": "",
+        "task_id": "SU_057"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_058",
+        "native_split": "",
+        "task_id": "SU_058"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_059",
+        "native_split": "",
+        "task_id": "SU_059"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_060",
+        "native_split": "",
+        "task_id": "SU_060"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_061",
+        "native_split": "",
+        "task_id": "SU_061"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_062",
+        "native_split": "",
+        "task_id": "SU_062"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_064",
+        "native_split": "",
+        "task_id": "SU_064"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_066",
+        "native_split": "",
+        "task_id": "SU_066"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_067",
+        "native_split": "",
+        "task_id": "SU_067"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_069",
+        "native_split": "",
+        "task_id": "SU_069"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_070",
+        "native_split": "",
+        "task_id": "SU_070"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_072",
+        "native_split": "",
+        "task_id": "SU_072"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_078",
+        "native_split": "",
+        "task_id": "SU_078"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_081",
+        "native_split": "",
+        "task_id": "SU_081"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_083",
+        "native_split": "",
+        "task_id": "SU_083"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_084",
+        "native_split": "",
+        "task_id": "SU_084"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_086",
+        "native_split": "",
+        "task_id": "SU_086"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_089",
+        "native_split": "",
+        "task_id": "SU_089"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_091",
+        "native_split": "",
+        "task_id": "SU_091"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_092",
+        "native_split": "",
+        "task_id": "SU_092"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_093",
+        "native_split": "",
+        "task_id": "SU_093"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_094",
+        "native_split": "",
+        "task_id": "SU_094"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_097",
+        "native_split": "",
+        "task_id": "SU_097"
+      }
+    ],
+    "train": [
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_004",
+        "native_split": "",
+        "task_id": "BH_004"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_007",
+        "native_split": "",
+        "task_id": "BH_007"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_017",
+        "native_split": "",
+        "task_id": "BH_017"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_019",
+        "native_split": "",
+        "task_id": "BH_019"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_036",
+        "native_split": "",
+        "task_id": "BH_036"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_042",
+        "native_split": "",
+        "task_id": "BH_042"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_043",
+        "native_split": "",
+        "task_id": "BH_043"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_044",
+        "native_split": "",
+        "task_id": "BH_044"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_052",
+        "native_split": "",
+        "task_id": "BH_052"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_059",
+        "native_split": "",
+        "task_id": "BH_059"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_062",
+        "native_split": "",
+        "task_id": "BH_062"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_071",
+        "native_split": "",
+        "task_id": "BH_071"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_075",
+        "native_split": "",
+        "task_id": "BH_075"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_078",
+        "native_split": "",
+        "task_id": "BH_078"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_091",
+        "native_split": "",
+        "task_id": "BH_091"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_093",
+        "native_split": "",
+        "task_id": "BH_093"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_097",
+        "native_split": "",
+        "task_id": "BH_097"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_099",
+        "native_split": "",
+        "task_id": "BH_099"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_015",
+        "native_split": "",
+        "task_id": "SU_015"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_026",
+        "native_split": "",
+        "task_id": "SU_026"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_034",
+        "native_split": "",
+        "task_id": "SU_034"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_038",
+        "native_split": "",
+        "task_id": "SU_038"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_039",
+        "native_split": "",
+        "task_id": "SU_039"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_040",
+        "native_split": "",
+        "task_id": "SU_040"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_047",
+        "native_split": "",
+        "task_id": "SU_047"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_048",
+        "native_split": "",
+        "task_id": "SU_048"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_054",
+        "native_split": "",
+        "task_id": "SU_054"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_056",
+        "native_split": "",
+        "task_id": "SU_056"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_063",
+        "native_split": "",
+        "task_id": "SU_063"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_068",
+        "native_split": "",
+        "task_id": "SU_068"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_071",
+        "native_split": "",
+        "task_id": "SU_071"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_076",
+        "native_split": "",
+        "task_id": "SU_076"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_087",
+        "native_split": "",
+        "task_id": "SU_087"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_090",
+        "native_split": "",
+        "task_id": "SU_090"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_095",
+        "native_split": "",
+        "task_id": "SU_095"
+      }
+    ],
+    "val": [
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_003",
+        "native_split": "",
+        "task_id": "BH_003"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_005",
+        "native_split": "",
+        "task_id": "BH_005"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_010",
+        "native_split": "",
+        "task_id": "BH_010"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_011",
+        "native_split": "",
+        "task_id": "BH_011"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_026",
+        "native_split": "",
+        "task_id": "BH_026"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_040",
+        "native_split": "",
+        "task_id": "BH_040"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_041",
+        "native_split": "",
+        "task_id": "BH_041"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_046",
+        "native_split": "",
+        "task_id": "BH_046"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_057",
+        "native_split": "",
+        "task_id": "BH_057"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_064",
+        "native_split": "",
+        "task_id": "BH_064"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_066",
+        "native_split": "",
+        "task_id": "BH_066"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_070",
+        "native_split": "",
+        "task_id": "BH_070"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_073",
+        "native_split": "",
+        "task_id": "BH_073"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_076",
+        "native_split": "",
+        "task_id": "BH_076"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_082",
+        "native_split": "",
+        "task_id": "BH_082"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_084",
+        "native_split": "",
+        "task_id": "BH_084"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_094",
+        "native_split": "",
+        "task_id": "BH_094"
+      },
+      {
+        "extra": {
+          "subset": "BH"
+        },
+        "native_id": "BH_098",
+        "native_split": "",
+        "task_id": "BH_098"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_006",
+        "native_split": "",
+        "task_id": "SU_006"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_016",
+        "native_split": "",
+        "task_id": "SU_016"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_018",
+        "native_split": "",
+        "task_id": "SU_018"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_019",
+        "native_split": "",
+        "task_id": "SU_019"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_021",
+        "native_split": "",
+        "task_id": "SU_021"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_033",
+        "native_split": "",
+        "task_id": "SU_033"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_045",
+        "native_split": "",
+        "task_id": "SU_045"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_046",
+        "native_split": "",
+        "task_id": "SU_046"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_050",
+        "native_split": "",
+        "task_id": "SU_050"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_065",
+        "native_split": "",
+        "task_id": "SU_065"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_073",
+        "native_split": "",
+        "task_id": "SU_073"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_074",
+        "native_split": "",
+        "task_id": "SU_074"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_075",
+        "native_split": "",
+        "task_id": "SU_075"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_079",
+        "native_split": "",
+        "task_id": "SU_079"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_096",
+        "native_split": "",
+        "task_id": "SU_096"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_098",
+        "native_split": "",
+        "task_id": "SU_098"
+      },
+      {
+        "extra": {
+          "subset": "SU"
+        },
+        "native_id": "SU_099",
+        "native_split": "",
+        "task_id": "SU_099"
+      }
+    ]
+  },
+  "version": "1"
+}

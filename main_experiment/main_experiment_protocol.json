@@ -1,0 +1,96 @@
+{
+  "protocol_version": "1.0",
+  "status": "Fixed shared splits for the main experiment.",
+  "rules": [
+    "All optimizers use the task IDs in the shared benchmark manifest.",
+    "Train, validation, and deployment splits are fixed and disjoint.",
+    "Deployment data is used only to evaluate the final selected skill.",
+    "Comparisons use the configured solver, execution harness, and benchmark scorer."
+  ],
+  "benchmarks": {
+    "officeqa": {
+      "manifest_id": "officeqa_pro_hard_133_v1",
+      "manifest_path": "integration/manifests/officeqa_pro_hard_133_v1.json",
+      "content_hash": "580536f71dc54430bda91963afd34002fe3cd76d156026e8395fee81c9b84049",
+      "counts": {
+        "train": 27,
+        "validation": 13,
+        "deployment": 93
+      },
+      "population_source": "OfficeQA-Pro, 133 tasks",
+      "role_origin": "SkillOpt fixed manifest restricted to OfficeQA-Pro task IDs"
+    },
+    "spreadsheetbench": {
+      "manifest_id": "spreadsheetbench_verified_400_v1",
+      "manifest_path": "integration/manifests/spreadsheetbench_verified_400_v1.json",
+      "content_hash": "a12df576c4133c3fca0cc784298206b9ebe1058226acb421dfce51f2eb30ff02",
+      "counts": {
+        "train": 80,
+        "validation": 40,
+        "deployment": 280
+      },
+      "population_source": "verified_400, 400 tasks",
+      "role_origin": "SkillOpt fixed manifest over verified_400"
+    },
+    "alfworld": {
+      "manifest_id": "alfworld_default_191_v2",
+      "manifest_path": "integration/manifests/alfworld_default_191_v2.json",
+      "content_hash": "15f2fd9ef8a3330c28b4737e37124882d2d8eba155bfce2acd83caf8916ed7f7",
+      "counts": {
+        "train": 39,
+        "validation": 18,
+        "deployment": 134
+      },
+      "population_source": "native train / valid_seen / valid_unseen",
+      "role_origin": "native split semantics preserved: train<-train, validation<-valid_seen, deployment<-valid_unseen"
+    },
+    "livemathematicianbench": {
+      "manifest_id": "livemath_frozen_4month_177_v2_val35",
+      "manifest_path": "integration/manifests/livemath_frozen_4month_177_v2_val35.json",
+      "content_hash": "802d5bd8f5823ac17bc5eb1a83c48e941e34ca097c81606b3fa409fb9e1eb5e3",
+      "counts": {
+        "train": 35,
+        "validation": 35,
+        "deployment": 107
+      },
+      "population_source": "frozen 4-month snapshot (202511, 202512, 202601, 202602)",
+      "role_origin": "SkillOpt fixed manifest over the frozen 4-month snapshot"
+    },
+    "livecodebench": {
+      "manifest_id": "livecodebench_v5v6_stratified_177_v2",
+      "manifest_path": "integration/manifests/livecodebench_v5v6_stratified_177_v2.json",
+      "content_hash": "432cbd5aa90569165d96abc5e06d8d789c0acb7d27ba73665abc27080d61ab99",
+      "counts": {
+        "train": 35,
+        "validation": 35,
+        "deployment": 107
+      },
+      "population_source": "LiveCodeBench release v5 + v6 problems present locally, 342 tasks (easy 84 / medium 104 / hard 154)",
+      "role_origin": "Seeded (42) difficulty-stratified sampling; train/validation/deployment counts are listed below."
+    },
+    "pubmedqa": {
+      "manifest_id": "pubmedqa_pqal_uniform_177_v2",
+      "manifest_path": "integration/manifests/pubmedqa_pqal_uniform_177_v2.json",
+      "content_hash": "1128f2ad0a9f067c8a5be48aebe9d97046c0218de31d7a5d9629184488045ee4",
+      "counts": {
+        "train": 35,
+        "validation": 35,
+        "deployment": 107
+      },
+      "population_source": "PubMedQA PQA-L expert-labelled questions, 1000 tasks",
+      "role_origin": "Seeded (42) uniform sampling; train/validation/deployment counts are listed below."
+    },
+    "chemllmbench": {
+      "manifest_id": "chemllmbench_yield_sample200_stratified_177_v2",
+      "manifest_path": "integration/manifests/chemllmbench_yield_sample200_stratified_177_v2.json",
+      "content_hash": "3eb54a60ba0d27f7560f77713321c1032d729e90aa25cbefb9a59c203152e3cc",
+      "counts": {
+        "train": 35,
+        "validation": 35,
+        "deployment": 107
+      },
+      "population_source": "ChemLLMBench yield_prediction sampled test sets (BH 100 + SU 100), 200 tasks",
+      "role_origin": "Seeded (42) sampling stratified by reaction subset and label."
+    }
+  }
+}

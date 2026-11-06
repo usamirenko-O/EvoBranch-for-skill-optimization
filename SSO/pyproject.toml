@@ -1,0 +1,6 @@
+[project]
+name = "sso"
+version = "0.1.0"
+description = "Unofficial reproduction of Self-Supervised Skill Optimization (SSO)"
+requires-python = ">=3.9"
+

@@ -1,0 +1,128 @@
+{
+  "_comment": [
+    "Shared optimizer, solver, and search settings. Read through integration.experiment.main_experiment_config."
+  ],
+  "optimizer": {
+    "skillopt": {
+      "skillopt_num_epochs": 4,
+      "skillopt_batch_size": 40,
+      "_note": [
+        "Native training epochs and batch size; other settings come from SkillOpt configs."
+      ]
+    },
+    "sso": {
+      "training_schedule": {
+        "sso_steps": 4,
+        "sso_schedule_seed": 0,
+        "sso_train_per_step": {
+          "officeqa": 8,
+          "livemathematicianbench": 9,
+          "alfworld": 10,
+          "spreadsheetbench": 20,
+          "livecodebench": 9,
+          "pubmedqa": 9,
+          "chemllmbench": 9
+        },
+        "_note": [
+          "Shared seeded schedule for native SSO and SSO+OURS."
+        ]
+      },
+      "sso_history_per_step": 8,
+      "sso_num_probes": 3,
+      "sso_update_budget": 4,
+      "sso_optimizer_temperature": 0.7,
+      "_note": [
+        "Probe, history, update, and optimizer-sampling settings. Solver decoding is configured separately."
+      ]
+    },
+    "skillgen": {
+      "skillgen_embedding_model": "optimizer-embeddings",
+      "skillgen_config_overrides": {},
+      "_note": [
+        "Use native SkillGen defaults unless skillgen_config_overrides specifies an override."
+      ]
+    }
+  },
+  "harness": {
+    "officeqa": {
+      "max_tool_turns": 24
+    },
+    "spreadsheetbench": {
+      "max_turns": 30,
+      "exec_timeout": 600
+    },
+    "alfworld": {
+      "max_steps": 50
+    },
+    "livemathematicianbench": {},
+    "livecodebench": {},
+    "pubmedqa": {},
+    "chemllmbench": {},
+    "_note": [
+      "Benchmark execution limits shared by the runners and evaluation harnesses."
+    ]
+  },
+  "solver_call": {
+    "max_tokens": 4096,
+    "max_tokens_by_solver": {
+      "solver-qwen3-5-4b": 16384
+    },
+    "optimizer_max_tokens": 32768,
+    "temperature": 0.0,
+    "_note": [
+      "Per-solver limits override max_tokens; optimizer calls use optimizer_max_tokens."
+    ]
+  },
+  "deployment_workers": {
+    "alfworld": 1,
+    "officeqa": 4,
+    "spreadsheetbench": 2,
+    "livemathematicianbench": 4,
+    "livecodebench": 4,
+    "pubmedqa": 4,
+    "chemllmbench": 4,
+    "_note": "ALFWorld uses one worker because the TextWorld environment is not thread-safe."
+  },
+  "ours": {
+    "design": {
+      "rounds": 4,
+      "beam_m": 3,
+      "k_subsets": 3,
+      "partitioner": "history_aware_kmeans",
+      "partitioner_options": {
+        "seed": 42
+      },
+      "operator": "history_routed_operator_family",
+      "operator_options": {
+        "max_candidates": 3,
+        "prompt_char_budget": 400000,
+        "max_tokens": 16384,
+        "retries": 1,
+        "regen_min_rounds": 2,
+        "regen_min_attempts": 2
+      },
+      "tie_break": "skill_text_hash",
+      "deployment_rule": "final_merge_top1",
+      "tracker": "llm_issue_tracker",
+      "tracker_options": {
+        "char_budget": 60000,
+        "retries": 1
+      },
+      "_note": [
+        "Search depth, beam width, evidence grouping, evolution, and final selection settings.",
+        "SSO rounds must match its training schedule. Exact validation-score ties use the skill text hash."
+      ]
+    },
+    "embedding_model": "optimizer-embeddings",
+    "_note": [
+      "Resource alias for embedding native evidence text."
+    ],
+    "native_epoch_protocol": {
+      "skillopt": true,
+      "_note": [
+        "Apply SkillOpt slow updates and meta-skill updates per selected branch.",
+        "Updates retain the existing validation score; the final round does not run an epoch update."
+      ]
+    }
+  }
+}

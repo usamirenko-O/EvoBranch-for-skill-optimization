@@ -1,0 +1,4 @@
+_base_: ../../../SkillOpt/configs/alfworld/default.yaml
+
+model:
+  backend: openai_compatible

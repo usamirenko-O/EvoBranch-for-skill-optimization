@@ -1,0 +1,4 @@
+_base_: ../../../SkillOpt/configs/livecodebench/default.yaml
+
+model:
+  backend: openai_compatible

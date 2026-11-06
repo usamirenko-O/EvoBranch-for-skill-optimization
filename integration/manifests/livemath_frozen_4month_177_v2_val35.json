@@ -1,0 +1,2048 @@
+{
+  "benchmark": "livemathematicianbench",
+  "content_hash": "802d5bd8f5823ac17bc5eb1a83c48e941e34ca097c81606b3fa409fb9e1eb5e3",
+  "counts": {
+    "deployment": 107,
+    "train": 35,
+    "val": 35
+  },
+  "manifest_id": "livemath_frozen_4month_177_v2_val35",
+  "notes": [
+    "Validation contains 17 upstream validation tasks and 18 tasks sampled from the upstream test split with seed 42; deployment contains the remaining 107 tasks.",
+    "Task population: identical task IDs to what integration/skillopt_livemath/join_livemath_split.py already produces.",
+    "Covers 4 of the 8 monthly files present locally (177 of 608 items).",
+    "Choices are deterministically shuffled (seed in sampling.choice_shuffle_seed). The raw corpus lists the correct option first in all 608 items, so an unshuffled presentation would score 100% for anything that always answers A."
+  ],
+  "role_map": {
+    "deployment": "SkillOpt livemathematicianbench_id_split/test (125) minus the 18 moved to val = 107",
+    "native_splits": "none -- LiveMath publishes monthly qa_*_final.json files",
+    "train": "SkillOpt livemathematicianbench_id_split/train (35)",
+    "val": "SkillOpt livemathematicianbench_id_split/val (17) + 18 tasks moved from upstream test (seed 42) = 35"
+  },
+  "sampling": {
+    "choice_shuffle_seed": 42,
+    "method": "frozen_upstream_manifest_val_extended_seeded",
+    "seed": 42,
+    "upstream_split_mode": "ratio",
+    "upstream_split_ratio": "2:1:7",
+    "val_extension": {
+      "from": "upstream test split",
+      "n": 18,
+      "seed": 42
+    }
+  },
+  "source": {
+    "frozen_partition": "SkillOpt/data/livemathematicianbench_id_split",
+    "inputs": [
+      {
+        "path": "SkillOpt/data/livemathematicianbench_id_split/split_manifest.json",
+        "present": true,
+        "sha256": "9eec745e20bfb49f99858f4fbd1ba71bbc8886e804f36fbb960f3d0fb1969b37"
+      },
+      {
+        "path": "SkillOpt/data/livemathematicianbench_id_split/train/items.json",
+        "present": true,
+        "sha256": "6135e20d660f75fe93ebb8623e9be860eca19a064ae6de83876106f93abc47df"
+      },
+      {
+        "path": "SkillOpt/data/livemathematicianbench_id_split/val/items.json",
+        "present": true,
+        "sha256": "3611d9b5a84f86374d38eca21dcf0665f790723d41c74cb2917d0689b1c769fc"
+      },
+      {
+        "path": "SkillOpt/data/livemathematicianbench_id_split/test/items.json",
+        "present": true,
+        "sha256": "6fc9eeada1834908e21ceeee857ec7a463593a1077287c1388ee0f73e1a9c628"
+      }
+    ],
+    "materialized_from": "benchmarks/livemathematicianbench/data",
+    "official_scorer": {
+      "note": "frozen Phase-1 decision; this phase does not change it.",
+      "ref": "integration.common.livemath_scoring:score",
+      "upstream": "SkillOpt envs/livemathematicianbench/evaluator.py (parse_choice_label), used by import"
+    },
+    "upstream_dataset": "LiveMathematicianBench/LiveMathematicianBench",
+    "upstream_files": [
+      "data/202511/qa_202511_final.json",
+      "data/202512/qa_202512_final.json",
+      "data/202601/qa_202601_final.json",
+      "data/202602/qa_202602_final.json"
+    ],
+    "upstream_revision": "b72450f6ce96c26158d64d945a5d31ef7727be41",
+    "upstream_url": "https://huggingface.co/datasets/LiveMathematicianBench/LiveMathematicianBench"
+  },
+  "splits": {
+    "deployment": [
+      {
+        "extra": {
+          "month": "202602",
+          "no": 12,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:12",
+        "native_split": "",
+        "task_id": "202602:12"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 4,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:4",
+        "native_split": "",
+        "task_id": "202511:4"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 42,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:42",
+        "native_split": "",
+        "task_id": "202601:42"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 38,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:38",
+        "native_split": "",
+        "task_id": "202512:38"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 4,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:4",
+        "native_split": "",
+        "task_id": "202512:4"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 4,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:4",
+        "native_split": "",
+        "task_id": "202602:4"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 32,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:32",
+        "native_split": "",
+        "task_id": "202602:32"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 26,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:26",
+        "native_split": "",
+        "task_id": "202512:26"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 13,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:13",
+        "native_split": "",
+        "task_id": "202601:13"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 1,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:1",
+        "native_split": "",
+        "task_id": "202602:1"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 18,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:18",
+        "native_split": "",
+        "task_id": "202511:18"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 5,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:5",
+        "native_split": "",
+        "task_id": "202512:5"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 19,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:19",
+        "native_split": "",
+        "task_id": "202511:19"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 40,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:40",
+        "native_split": "",
+        "task_id": "202602:40"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 29,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:29",
+        "native_split": "",
+        "task_id": "202602:29"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 35,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:35",
+        "native_split": "",
+        "task_id": "202512:35"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 48,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:48",
+        "native_split": "",
+        "task_id": "202512:48"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 52,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:52",
+        "native_split": "",
+        "task_id": "202512:52"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 44,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:44",
+        "native_split": "",
+        "task_id": "202512:44"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 43,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:43",
+        "native_split": "",
+        "task_id": "202601:43"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 9,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:9",
+        "native_split": "",
+        "task_id": "202602:9"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 21,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:21",
+        "native_split": "",
+        "task_id": "202602:21"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 35,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:35",
+        "native_split": "",
+        "task_id": "202601:35"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 50,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:50",
+        "native_split": "",
+        "task_id": "202602:50"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 13,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:13",
+        "native_split": "",
+        "task_id": "202512:13"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 49,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:49",
+        "native_split": "",
+        "task_id": "202602:49"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 18,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:18",
+        "native_split": "",
+        "task_id": "202602:18"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 15,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:15",
+        "native_split": "",
+        "task_id": "202601:15"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 21,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:21",
+        "native_split": "",
+        "task_id": "202601:21"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 32,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:32",
+        "native_split": "",
+        "task_id": "202601:32"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 34,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:34",
+        "native_split": "",
+        "task_id": "202602:34"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 20,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:20",
+        "native_split": "",
+        "task_id": "202602:20"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 5,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:5",
+        "native_split": "",
+        "task_id": "202602:5"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 40,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:40",
+        "native_split": "",
+        "task_id": "202512:40"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 22,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:22",
+        "native_split": "",
+        "task_id": "202511:22"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 36,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:36",
+        "native_split": "",
+        "task_id": "202601:36"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 49,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:49",
+        "native_split": "",
+        "task_id": "202512:49"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 10,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:10",
+        "native_split": "",
+        "task_id": "202511:10"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 2,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:2",
+        "native_split": "",
+        "task_id": "202601:2"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 19,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:19",
+        "native_split": "",
+        "task_id": "202602:19"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 9,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:9",
+        "native_split": "",
+        "task_id": "202601:9"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 6,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:6",
+        "native_split": "",
+        "task_id": "202512:6"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 14,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:14",
+        "native_split": "",
+        "task_id": "202602:14"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 17,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:17",
+        "native_split": "",
+        "task_id": "202512:17"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 33,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:33",
+        "native_split": "",
+        "task_id": "202602:33"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 26,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:26",
+        "native_split": "",
+        "task_id": "202601:26"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 1,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:1",
+        "native_split": "",
+        "task_id": "202601:1"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 30,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:30",
+        "native_split": "",
+        "task_id": "202512:30"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 44,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:44",
+        "native_split": "",
+        "task_id": "202602:44"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 30,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:30",
+        "native_split": "",
+        "task_id": "202601:30"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 40,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:40",
+        "native_split": "",
+        "task_id": "202601:40"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 29,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:29",
+        "native_split": "",
+        "task_id": "202601:29"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 11,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:11",
+        "native_split": "",
+        "task_id": "202511:11"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 9,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:9",
+        "native_split": "",
+        "task_id": "202512:9"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 18,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:18",
+        "native_split": "",
+        "task_id": "202601:18"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 1,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:1",
+        "native_split": "",
+        "task_id": "202512:1"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 4,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:4",
+        "native_split": "",
+        "task_id": "202601:4"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 6,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:6",
+        "native_split": "",
+        "task_id": "202511:6"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 38,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:38",
+        "native_split": "",
+        "task_id": "202602:38"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 10,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:10",
+        "native_split": "",
+        "task_id": "202601:10"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 11,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:11",
+        "native_split": "",
+        "task_id": "202602:11"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 45,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:45",
+        "native_split": "",
+        "task_id": "202512:45"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 12,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:12",
+        "native_split": "",
+        "task_id": "202601:12"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 47,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:47",
+        "native_split": "",
+        "task_id": "202512:47"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 21,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:21",
+        "native_split": "",
+        "task_id": "202511:21"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 16,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:16",
+        "native_split": "",
+        "task_id": "202601:16"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 3,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:3",
+        "native_split": "",
+        "task_id": "202512:3"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 12,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:12",
+        "native_split": "",
+        "task_id": "202511:12"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 39,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:39",
+        "native_split": "",
+        "task_id": "202512:39"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 8,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:8",
+        "native_split": "",
+        "task_id": "202601:8"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 11,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:11",
+        "native_split": "",
+        "task_id": "202601:11"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 25,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:25",
+        "native_split": "",
+        "task_id": "202511:25"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 17,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:17",
+        "native_split": "",
+        "task_id": "202601:17"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 36,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:36",
+        "native_split": "",
+        "task_id": "202602:36"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 43,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:43",
+        "native_split": "",
+        "task_id": "202602:43"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 6,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:6",
+        "native_split": "",
+        "task_id": "202601:6"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 35,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:35",
+        "native_split": "",
+        "task_id": "202602:35"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 11,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:11",
+        "native_split": "",
+        "task_id": "202512:11"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 23,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:23",
+        "native_split": "",
+        "task_id": "202602:23"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 7,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:7",
+        "native_split": "",
+        "task_id": "202601:7"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 12,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:12",
+        "native_split": "",
+        "task_id": "202512:12"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 2,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:2",
+        "native_split": "",
+        "task_id": "202511:2"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 43,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:43",
+        "native_split": "",
+        "task_id": "202512:43"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 24,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:24",
+        "native_split": "",
+        "task_id": "202602:24"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 34,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:34",
+        "native_split": "",
+        "task_id": "202601:34"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 28,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:28",
+        "native_split": "",
+        "task_id": "202512:28"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 27,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:27",
+        "native_split": "",
+        "task_id": "202601:27"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 42,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:42",
+        "native_split": "",
+        "task_id": "202602:42"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 22,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:22",
+        "native_split": "",
+        "task_id": "202512:22"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 17,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:17",
+        "native_split": "",
+        "task_id": "202602:17"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 48,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:48",
+        "native_split": "",
+        "task_id": "202602:48"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 28,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:28",
+        "native_split": "",
+        "task_id": "202602:28"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 3,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:3",
+        "native_split": "",
+        "task_id": "202602:3"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 31,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:31",
+        "native_split": "",
+        "task_id": "202512:31"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 27,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:27",
+        "native_split": "",
+        "task_id": "202512:27"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 8,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:8",
+        "native_split": "",
+        "task_id": "202511:8"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 9,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:9",
+        "native_split": "",
+        "task_id": "202511:9"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 28,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:28",
+        "native_split": "",
+        "task_id": "202601:28"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 25,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:25",
+        "native_split": "",
+        "task_id": "202602:25"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 23,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:23",
+        "native_split": "",
+        "task_id": "202511:23"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 7,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:7",
+        "native_split": "",
+        "task_id": "202512:7"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 34,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:34",
+        "native_split": "",
+        "task_id": "202512:34"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 42,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:42",
+        "native_split": "",
+        "task_id": "202512:42"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 7,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:7",
+        "native_split": "",
+        "task_id": "202511:7"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 29,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:29",
+        "native_split": "",
+        "task_id": "202511:29"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 37,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:37",
+        "native_split": "",
+        "task_id": "202602:37"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 46,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:46",
+        "native_split": "",
+        "task_id": "202512:46"
+      }
+    ],
+    "train": [
+      {
+        "extra": {
+          "month": "202602",
+          "no": 22,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:22",
+        "native_split": "",
+        "task_id": "202602:22"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 8,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:8",
+        "native_split": "",
+        "task_id": "202512:8"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 16,
+          "skillopt_split": "train",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:16",
+        "native_split": "",
+        "task_id": "202511:16"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 44,
+          "skillopt_split": "train",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:44",
+        "native_split": "",
+        "task_id": "202601:44"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 14,
+          "skillopt_split": "train",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:14",
+        "native_split": "",
+        "task_id": "202511:14"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 30,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:30",
+        "native_split": "",
+        "task_id": "202602:30"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 2,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:2",
+        "native_split": "",
+        "task_id": "202602:2"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 41,
+          "skillopt_split": "train",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:41",
+        "native_split": "",
+        "task_id": "202601:41"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 23,
+          "skillopt_split": "train",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:23",
+        "native_split": "",
+        "task_id": "202601:23"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 20,
+          "skillopt_split": "train",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:20",
+        "native_split": "",
+        "task_id": "202511:20"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 22,
+          "skillopt_split": "train",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:22",
+        "native_split": "",
+        "task_id": "202601:22"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 14,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:14",
+        "native_split": "",
+        "task_id": "202512:14"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 26,
+          "skillopt_split": "train",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:26",
+        "native_split": "",
+        "task_id": "202511:26"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 3,
+          "skillopt_split": "train",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:3",
+        "native_split": "",
+        "task_id": "202511:3"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 33,
+          "skillopt_split": "train",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:33",
+        "native_split": "",
+        "task_id": "202601:33"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 7,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:7",
+        "native_split": "",
+        "task_id": "202602:7"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 27,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:27",
+        "native_split": "",
+        "task_id": "202602:27"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 31,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:31",
+        "native_split": "",
+        "task_id": "202602:31"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 41,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:41",
+        "native_split": "",
+        "task_id": "202602:41"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 25,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:25",
+        "native_split": "",
+        "task_id": "202512:25"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 10,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:10",
+        "native_split": "",
+        "task_id": "202602:10"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 16,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:16",
+        "native_split": "",
+        "task_id": "202602:16"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 16,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:16",
+        "native_split": "",
+        "task_id": "202512:16"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 2,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:2",
+        "native_split": "",
+        "task_id": "202512:2"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 24,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:24",
+        "native_split": "",
+        "task_id": "202512:24"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 32,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:32",
+        "native_split": "",
+        "task_id": "202512:32"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 47,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:47",
+        "native_split": "",
+        "task_id": "202602:47"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 46,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:46",
+        "native_split": "",
+        "task_id": "202602:46"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 21,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:21",
+        "native_split": "",
+        "task_id": "202512:21"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 33,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:33",
+        "native_split": "",
+        "task_id": "202512:33"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 45,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:45",
+        "native_split": "",
+        "task_id": "202602:45"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 26,
+          "skillopt_split": "train",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:26",
+        "native_split": "",
+        "task_id": "202602:26"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 41,
+          "skillopt_split": "train",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:41",
+        "native_split": "",
+        "task_id": "202512:41"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 38,
+          "skillopt_split": "train",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:38",
+        "native_split": "",
+        "task_id": "202601:38"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 14,
+          "skillopt_split": "train",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:14",
+        "native_split": "",
+        "task_id": "202601:14"
+      }
+    ],
+    "val": [
+      {
+        "extra": {
+          "month": "202602",
+          "no": 8,
+          "skillopt_split": "val",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:8",
+        "native_split": "",
+        "task_id": "202602:8"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 50,
+          "skillopt_split": "val",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:50",
+        "native_split": "",
+        "task_id": "202512:50"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 36,
+          "skillopt_split": "val",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:36",
+        "native_split": "",
+        "task_id": "202512:36"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 1,
+          "skillopt_split": "val",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:1",
+        "native_split": "",
+        "task_id": "202511:1"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 31,
+          "skillopt_split": "val",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:31",
+        "native_split": "",
+        "task_id": "202601:31"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "no": 17,
+          "skillopt_split": "val",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:17",
+        "native_split": "",
+        "task_id": "202511:17"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 37,
+          "skillopt_split": "val",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:37",
+        "native_split": "",
+        "task_id": "202512:37"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 39,
+          "skillopt_split": "val",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:39",
+        "native_split": "",
+        "task_id": "202601:39"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 25,
+          "skillopt_split": "val",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:25",
+        "native_split": "",
+        "task_id": "202601:25"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 24,
+          "skillopt_split": "val",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:24",
+        "native_split": "",
+        "task_id": "202601:24"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 45,
+          "skillopt_split": "val",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:45",
+        "native_split": "",
+        "task_id": "202601:45"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 19,
+          "skillopt_split": "val",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:19",
+        "native_split": "",
+        "task_id": "202601:19"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 10,
+          "skillopt_split": "val",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:10",
+        "native_split": "",
+        "task_id": "202512:10"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "no": 46,
+          "skillopt_split": "val",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:46",
+        "native_split": "",
+        "task_id": "202601:46"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "no": 15,
+          "skillopt_split": "val",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:15",
+        "native_split": "",
+        "task_id": "202512:15"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 15,
+          "skillopt_split": "val",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:15",
+        "native_split": "",
+        "task_id": "202602:15"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "no": 6,
+          "skillopt_split": "val",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:6",
+        "native_split": "",
+        "task_id": "202602:6"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "moved_from": "upstream_test",
+          "no": 13,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:13",
+        "native_split": "",
+        "task_id": "202511:13"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "moved_from": "upstream_test",
+          "no": 15,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:15",
+        "native_split": "",
+        "task_id": "202511:15"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "moved_from": "upstream_test",
+          "no": 24,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:24",
+        "native_split": "",
+        "task_id": "202511:24"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "moved_from": "upstream_test",
+          "no": 27,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:27",
+        "native_split": "",
+        "task_id": "202511:27"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "moved_from": "upstream_test",
+          "no": 28,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:28",
+        "native_split": "",
+        "task_id": "202511:28"
+      },
+      {
+        "extra": {
+          "month": "202511",
+          "moved_from": "upstream_test",
+          "no": 5,
+          "skillopt_split": "test",
+          "source_file": "data/202511/qa_202511_final.json"
+        },
+        "native_id": "202511:5",
+        "native_split": "",
+        "task_id": "202511:5"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "moved_from": "upstream_test",
+          "no": 18,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:18",
+        "native_split": "",
+        "task_id": "202512:18"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "moved_from": "upstream_test",
+          "no": 19,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:19",
+        "native_split": "",
+        "task_id": "202512:19"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "moved_from": "upstream_test",
+          "no": 20,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:20",
+        "native_split": "",
+        "task_id": "202512:20"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "moved_from": "upstream_test",
+          "no": 23,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:23",
+        "native_split": "",
+        "task_id": "202512:23"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "moved_from": "upstream_test",
+          "no": 29,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:29",
+        "native_split": "",
+        "task_id": "202512:29"
+      },
+      {
+        "extra": {
+          "month": "202512",
+          "moved_from": "upstream_test",
+          "no": 51,
+          "skillopt_split": "test",
+          "source_file": "data/202512/qa_202512_final.json"
+        },
+        "native_id": "202512:51",
+        "native_split": "",
+        "task_id": "202512:51"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "moved_from": "upstream_test",
+          "no": 20,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:20",
+        "native_split": "",
+        "task_id": "202601:20"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "moved_from": "upstream_test",
+          "no": 3,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:3",
+        "native_split": "",
+        "task_id": "202601:3"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "moved_from": "upstream_test",
+          "no": 37,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:37",
+        "native_split": "",
+        "task_id": "202601:37"
+      },
+      {
+        "extra": {
+          "month": "202601",
+          "moved_from": "upstream_test",
+          "no": 5,
+          "skillopt_split": "test",
+          "source_file": "data/202601/qa_202601_final.json"
+        },
+        "native_id": "202601:5",
+        "native_split": "",
+        "task_id": "202601:5"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "moved_from": "upstream_test",
+          "no": 13,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:13",
+        "native_split": "",
+        "task_id": "202602:13"
+      },
+      {
+        "extra": {
+          "month": "202602",
+          "moved_from": "upstream_test",
+          "no": 39,
+          "skillopt_split": "test",
+          "source_file": "data/202602/qa_202602_final.json"
+        },
+        "native_id": "202602:39",
+        "native_split": "",
+        "task_id": "202602:39"
+      }
+    ]
+  },
+  "version": "1"
+}

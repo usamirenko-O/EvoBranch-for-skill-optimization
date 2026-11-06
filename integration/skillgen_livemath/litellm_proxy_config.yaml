@@ -1,0 +1,31 @@
+# Environment-configured solver and embedding aliases for SkillGen.
+model_list:
+  - model_name: livemath-solver
+    litellm_params:
+      model: os.environ/VERTEX_MODEL_ID
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: os.environ/VERTEX_LOCATION
+  - model_name: livemath-optimizer
+    litellm_params:
+      model: os.environ/VERTEX_OPTIMIZER_MODEL_ID
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: os.environ/VERTEX_OPTIMIZER_LOCATION
+  - model_name: livemath-embedding
+    litellm_params:
+      model: os.environ/VERTEX_EMBEDDING_MODEL_ID
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: os.environ/VERTEX_EMBEDDING_LOCATION
+
+
+  - model_name: livemath-solver-qwen3-4b
+    litellm_params:
+      model: os.environ/QWEN3_4B_MODEL_ID
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: os.environ/QWEN3_4B_LOCATION
+
+# Vertex's embedding endpoint rejects the OpenAI SDK's default
+# encoding_format=base64 param (litellm.UnsupportedParamsError). drop_params
+# silently drops params a given provider doesn't support rather than
+# erroring -- scoped to this SkillGen-only proxy config, not the shared one.
+litellm_settings:
+  drop_params: true

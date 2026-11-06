@@ -1,0 +1,41 @@
+# Model aliases for Vertex-hosted optimizer, solver, and embedding endpoints.
+model_list:
+
+  - model_name: optimizer-llm
+    litellm_params:
+      model: vertex_ai/claude-opus-5
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: us-central1
+
+  - model_name: solver-opus-5            # role 1: strong frontier
+    litellm_params:
+      model: vertex_ai/claude-opus-5
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: us-central1
+
+  - model_name: solver-sonnet-5          # role 2: same vendor, one tier down
+    litellm_params:
+      model: vertex_ai/claude-sonnet-5
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: us-central1
+
+  - model_name: solver-gemini-2-5-pro    # role 4: different provider family
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: us-central1
+
+  # role 3: small open-weights model, self-deployed. The endpoint only exists
+  # while it is deployed; QWEN3_4B_MODEL_ID holds the whole
+  # "vertex_ai/openai/<ENDPOINT_ID>" string (LiteLLM cannot concatenate env vars).
+  - model_name: solver-qwen3-4b
+    litellm_params:
+      model: os.environ/QWEN3_4B_MODEL_ID
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: os.environ/QWEN3_4B_LOCATION
+
+  - model_name: optimizer-embeddings
+    litellm_params:
+      model: vertex_ai/text-embedding-005
+      vertex_project: os.environ/VERTEX_PROJECT_ID
+      vertex_location: us-central1

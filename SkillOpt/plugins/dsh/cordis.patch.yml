@@ -1,0 +1,8 @@
+
+- insert:
+    - id: skillopt
+      name: './src/index.js'
+      # config:
+      #   backend: mock            # mock = no provider calls (default)
+      #   project: /path/to/project
+      #   preferences: 'Prefer pytest. Keep commits imperative.'

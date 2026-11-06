@@ -1,0 +1,26 @@
+{
+  "rounds": 4,
+  "beam_m": 4,
+  "k_subsets": 3,
+  "partitioner": "history_aware_kmeans",
+  "partitioner_options": {
+    "seed": 42
+  },
+  "operator": "history_routed_operator_family",
+  "operator_options": {
+    "max_candidates": 3,
+    "prompt_char_budget": 400000,
+    "max_tokens": 16384,
+    "retries": 1,
+    "regen_min_rounds": 2,
+    "regen_min_attempts": 2
+  },
+  "tie_break": "skill_text_hash",
+  "deployment_rule": "final_merge_top1",
+  "tracker": "llm_issue_tracker",
+  "tracker_options": {
+    "char_budget": 60000,
+    "retries": 1
+  },
+  "attempt_aware_proposal": true
+}
